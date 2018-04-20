@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:id="@+id/store_cardview"
+    card_view:cardElevation="2dp"
+    card_view:cardCornerRadius="5dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/ivPet"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/a"/>
+
+        <TextView
+            android:id="@+id/tvProductName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/ivPet"
+            android:layout_marginStart="41dp"
+            android:layout_toEndOf="@+id/ivPet"
+            android:text="@string/egg"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvProductPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ivPet"
+            android:layout_alignStart="@+id/tvProductName"
+            android:layout_marginBottom="15dp"
+            android:text="Giá: 250 cp"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/tvProductName"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="24dp"
+            android:text="@string/quantity"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ivPet"
+            android:layout_marginStart="62dp"
+            android:layout_toEndOf="@+id/tvProductPrice"
+            android:ems="10"
+            android:hint="1"
+            android:inputType="number"
+            android:textAlignment="center"
+            android:textColor="@color/black" />
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>

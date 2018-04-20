@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">KittyBank</string>
+    <string name="sign_in_account">Tài khoản đăng nhập</string>
+    <string name="password">Mật khẩu</string>
+    <string name="register">Không có tài khoản? Đăng ký</string>
+    <string name="sign_in">Đăng nhập</string>
+    <string name="egg">Trứng</string>
+    <string name="quantity">Số lượng</string>
 </resources>
