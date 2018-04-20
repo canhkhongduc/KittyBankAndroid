@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.util.Log;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -16,6 +17,9 @@ import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import gamification.kitty.hackathon.kittybank.callback.IVolleyCallback;
 import gamification.kitty.hackathon.kittybank.enums.ERestApiEndpoints;
@@ -33,6 +37,45 @@ public class KittyRequestManagement {
 
     private Context getApplicationContext() {
         return applicationContext;
+    }
+
+    public void getKittyById(final IVolleyCallback callback, final int kittyId){
+        final int[] responseCode = new int[1];
+
+        // Build a request to check if the login token is valid
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.GET,
+                ERestApiEndpoints.GET_KITTY_BY_ID_ENDPOINT.toString(),
+                null,
+                new Response.Listener<JSONObject>() {
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        if (responseCode[0] == 200) {
+                            if (response != null) {
+                                callback.onSuccess(response.toString());
+                            }
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("error", error.toString()); //fix hard code
+            }
+        }) {
+            @Override
+            public Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("id", kittyId+"");
+                return params;
+            }
+
+            @Override
+            protected Response<JSONObject> parseNetworkResponse(NetworkResponse response) {
+                responseCode[0] = response.statusCode;
+                return super.parseNetworkResponse(response);
+            }
+        };
+        requestQueue.add(postRequest);
     }
 
     public void getKitties(final IVolleyCallback callback){

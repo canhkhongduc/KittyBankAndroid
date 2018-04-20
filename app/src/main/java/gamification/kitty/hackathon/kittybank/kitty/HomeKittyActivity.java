@@ -19,11 +19,11 @@ public class HomeKittyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home_kitty);
         //test for get kitty request
         kittyRequestManagement = new KittyRequestManagement(getApplicationContext());
-        kittyRequestManagement.getKitties(new IVolleyCallback() {
+        kittyRequestManagement.getKittyById(new IVolleyCallback() {
             @Override
             public void onSuccess(String result) {
                 Log.d("test",result);
             }
-        });
+        }, 1);
     }
 }
