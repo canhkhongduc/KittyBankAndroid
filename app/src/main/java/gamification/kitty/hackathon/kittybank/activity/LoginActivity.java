@@ -1,4 +1,4 @@
-package gamification.kitty.hackathon.kittybank.login;
+package gamification.kitty.hackathon.kittybank.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
