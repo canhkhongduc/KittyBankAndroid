@@ -1,5 +1,6 @@
 package gamification.kitty.hackathon.kittybank.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,9 +23,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 import gamification.kitty.hackathon.kittybank.R;
+import gamification.kitty.hackathon.kittybank.bank.HomeActivity;
 import gamification.kitty.hackathon.kittybank.callback.IVolleyCallback;
 import gamification.kitty.hackathon.kittybank.entity.User;
 import gamification.kitty.hackathon.kittybank.request.LoginRequestManagement;
+import gamification.kitty.hackathon.kittybank.utils.Utils;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText etAccount;
@@ -42,12 +45,13 @@ public class LoginActivity extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                User user = new User(etAccount.getText().toString(), etPassword.getText().toString());
+                final User user = new User(etAccount.getText().toString(), etPassword.getText().toString());
                 Log.d("user", user.getAccountNumber());
                 lrm.authenticate(new IVolleyCallback() {
                     @Override
                     public void onSuccess(String result) {
-
+                        Utils.saveUserToSharedPreferences(getApplicationContext(), user);
+                        startActivity(new Intent(LoginActivity.this, HomeActivity.class));
                     }
                 }, user);
             }

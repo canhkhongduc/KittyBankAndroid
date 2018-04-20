@@ -1,8 +1,15 @@
 package gamification.kitty.hackathon.kittybank.utils;
 
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.Map;
+
+import gamification.kitty.hackathon.kittybank.entity.User;
 
 /**
  * Created by User on 4/20/2018.
@@ -29,6 +36,13 @@ public class Utils {
         } catch (UnsupportedEncodingException uee) {
             throw new RuntimeException("Encoding not supported: " + paramsEncoding, uee);
         }
+    }
+    public static void saveUserToSharedPreferences(Context context, User user){
+        SharedPreferences preference = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor preferenceEditor = preference.edit();
+        preferenceEditor.putInt("userId", user.getId()).apply();
+        preferenceEditor.putString("userFullName", user.getFullName());
+        preferenceEditor.putString("accountNumber", user.getAccountNumber());
     }
 }
 
