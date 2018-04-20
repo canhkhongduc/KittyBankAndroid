@@ -1,10 +1,8 @@
-package gamification.kitty.hackathon.kittybank.kitty;
+package gamification.kitty.hackathon.kittybank.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-
-import com.google.gson.Gson;
 
 import gamification.kitty.hackathon.kittybank.R;
 import gamification.kitty.hackathon.kittybank.callback.IVolleyCallback;

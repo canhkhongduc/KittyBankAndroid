@@ -1,14 +1,15 @@
-package gamification.kitty.hackathon.kittybank.bank;
+package gamification.kitty.hackathon.kittybank.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
 import gamification.kitty.hackathon.kittybank.R;
 
-public class HomeActivity extends AppCompatActivity {
+public class StoreActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_home);
+        setContentView(R.layout.activity_store);
     }
 }
