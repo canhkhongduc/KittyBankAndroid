@@ -1,21 +1,17 @@
 package gamification.kitty.hackathon.kittybank.activity;
 
 import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-import gamification.kitty.hackathon.kittybank.R;
 import gamification.kitty.hackathon.kittybank.adapter.CustomStoreItemListAdapter;
 import gamification.kitty.hackathon.kittybank.callback.IVolleyCallback;
 import gamification.kitty.hackathon.kittybank.contract.GetItemStoreByResponse;
@@ -24,7 +20,7 @@ import gamification.kitty.hackathon.kittybank.entity.ItemStore;
 import gamification.kitty.hackathon.kittybank.entity.KittyType;
 import gamification.kitty.hackathon.kittybank.request.StoreRequestManagement;
 
-public class StoreActivity extends AppCompatActivity {
+public class StoreActivity extends BaseActivity {
     ListView lvItemStore;
     StoreRequestManagement storeRequestManagement;
     TextView tvCreditPoint;

@@ -14,14 +14,13 @@ import com.google.gson.Gson;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-import gamification.kitty.hackathon.kittybank.R;
 import gamification.kitty.hackathon.kittybank.callback.IVolleyCallback;
 import gamification.kitty.hackathon.kittybank.entity.User;
 import gamification.kitty.hackathon.kittybank.request.LoginRequest;
 import gamification.kitty.hackathon.kittybank.request.LoginRequestManagement;
 import gamification.kitty.hackathon.kittybank.utils.Utils;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends BaseActivity {
     private EditText etAccount;
     private EditText etPassword;
     private Button submitButton;

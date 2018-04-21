@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/profile_name_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/profile_txt_petname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="ALDUIN level 1"
+            android:textSize="30sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/profile_img_sex"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="10dp"
+            android:src="@drawable/male"
+            app:layout_constraintBottom_toBottomOf="@id/profile_txt_petname"
+            app:layout_constraintStart_toEndOf="@id/profile_txt_petname"
+            app:layout_constraintTop_toTopOf="@id/profile_txt_petname" />
+    </android.support.constraint.ConstraintLayout>
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/profile_petgif"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/prisma_dragon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_name_frame" />
+
+    <FrameLayout
+        android:id="@+id/profile_hunger_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="20dp"
+        android:background="#3c3a3b"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_petgif">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="3dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:background="#cc0000"
+            android:padding="10dp"
+            android:src="@drawable/chickenleg" />
+    </FrameLayout>
+
+
+    <ProgressBar
+        android:id="@+id/profile_hunger_progress"
+        style="@style/CustomProgressBarHorizontalRed"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginRight="5dp"
+        android:background="#3c3a3b"
+        android:max="100"
+        android:paddingBottom="3dp"
+        android:paddingRight="3dp"
+        android:paddingTop="3dp"
+        android:progress="16"
+        app:layout_constraintBottom_toBottomOf="@id/profile_hunger_icon"
+        app:layout_constraintEnd_toStartOf="@id/profile_btn_feed"
+        app:layout_constraintStart_toEndOf="@id/profile_hunger_icon"
+        app:layout_constraintTop_toTopOf="@id/profile_hunger_icon" />
+
+    <FrameLayout
+        android:id="@+id/profile_hygiene_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:background="#3c3a3b"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_hunger_icon">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="3dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:background="#0099cc"
+            android:padding="10dp"
+            android:src="@drawable/toilet" />
+    </FrameLayout>
+
+
+    <ProgressBar
+        android:id="@+id/profile_hygiene_progress"
+        style="@style/CustomProgressBarHorizontalBlue"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginRight="5dp"
+        android:background="#3c3a3b"
+        android:max="100"
+        android:paddingBottom="3dp"
+        android:paddingRight="3dp"
+        android:paddingTop="3dp"
+        android:progress="30"
+        app:layout_constraintBottom_toBottomOf="@id/profile_hygiene_icon"
+        app:layout_constraintEnd_toStartOf="@id/profile_btn_clean"
+        app:layout_constraintStart_toEndOf="@id/profile_hygiene_icon"
+        app:layout_constraintTop_toTopOf="@id/profile_hygiene_icon" />
+
+    <FrameLayout
+        android:id="@+id/profile_exp_icon"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:background="#3c3a3b"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/profile_hygiene_icon">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="3dp"
+            android:layout_marginStart="3dp"
+            android:layout_marginTop="3dp"
+            android:background="#669900"
+            android:padding="10dp"
+            android:text="EXP"
+            android:textColor="#ffffff"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+    </FrameLayout>
+
+
+    <ProgressBar
+        android:id="@+id/profile_exp_progress"
+        style="@style/CustomProgressBarHorizontalGreen"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginRight="5dp"
+        android:background="#3c3a3b"
+        android:max="100"
+        android:paddingBottom="3dp"
+        android:paddingRight="3dp"
+        android:paddingTop="3dp"
+        android:progress="70"
+        app:layout_constraintBottom_toBottomOf="@id/profile_exp_icon"
+        app:layout_constraintEnd_toStartOf="@id/profile_btn_clean"
+        app:layout_constraintStart_toEndOf="@id/profile_exp_icon"
+        app:layout_constraintTop_toTopOf="@id/profile_exp_icon" />
+
+    <Button
+        android:id="@+id/profile_btn_feed"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="15dp"
+        android:background="#ff4444"
+        android:text="Feed"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="@id/profile_hunger_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/profile_hunger_icon" />
+
+    <Button
+        android:id="@+id/profile_btn_clean"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginEnd="15dp"
+        android:background="#33b5e5"
+        android:text="Clean"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="@id/profile_hygiene_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/profile_hygiene_icon" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:src="@drawable/facebookshare"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
