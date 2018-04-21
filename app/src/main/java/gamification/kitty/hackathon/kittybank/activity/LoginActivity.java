@@ -48,7 +48,7 @@ public class LoginActivity extends AppCompatActivity {
                                 Log.d("json", result);
                                 Gson gson = new Gson();
                                 LoginRequest loginRequest = gson.fromJson(result, LoginRequest.class);
-                                SimpleDateFormat sdf1 = new SimpleDateFormat("YYYY-MM-dd");
+                                SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
                                 java.util.Date dob = sdf1.parse(loginRequest.getDob());
                                 java.sql.Date dobSqlDate = new java.sql.Date(dob.getTime());
                                 User user1 = new User();

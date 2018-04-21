@@ -2,6 +2,7 @@ package gamification.kitty.hackathon.kittybank.activity;
 
 import android.app.Activity;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -55,7 +56,7 @@ public class TransactMoneyActivity extends Activity {
                                 public void onClick(DialogInterface dialog, int whichButton) {
                                     float balance = Float.parseFloat(etBalance.getText().toString());
                                     String senderAccount = user.getAccountNumber();
-                                    int creditPoint = (int) (balance * 0.1);
+                                    int creditPoint = (int) (balance * 0.001);
                                     SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
                                     Date date = new Date();
                                     java.sql.Date sqlDate = new java.sql.Date(date.getTime());
@@ -69,6 +70,7 @@ public class TransactMoneyActivity extends Activity {
                                         @Override
                                         public void onSuccess(String result) {
                                             Toast.makeText(getApplicationContext(), "Giao dịch thành công", Toast.LENGTH_LONG).show();
+                                            startActivity(new Intent(TransactMoneyActivity.this, TransactActivity.class));
                                         }
 
                                         @Override
@@ -81,6 +83,13 @@ public class TransactMoneyActivity extends Activity {
                             })
                             .setNegativeButton(android.R.string.no, null).show();
                 }
+            }
+        });
+        btnCancel = findViewById(R.id.btn_cancel);
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TransactMoneyActivity.this, TransactActivity.class));
             }
         });
     }
