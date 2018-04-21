@@ -22,6 +22,11 @@ public class HomeKittyActivity extends AppCompatActivity {
             public void onSuccess(String result) {
                 Log.d("test",result);
             }
+
+            @Override
+            public void onFail(String result) {
+                
+            }
         }, 1);
     }
 }
