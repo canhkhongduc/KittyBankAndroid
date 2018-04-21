@@ -1,11 +1,9 @@
 package gamification.kitty.hackathon.kittybank.activity;
 
-import android.app.Activity;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,18 +12,15 @@ import android.widget.Toast;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
-import gamification.kitty.hackathon.kittybank.R;
 import gamification.kitty.hackathon.kittybank.callback.IVolleyCallback;
 import gamification.kitty.hackathon.kittybank.entity.Transaction;
 import gamification.kitty.hackathon.kittybank.entity.User;
 import gamification.kitty.hackathon.kittybank.request.TransactionRequestManagement;
 import gamification.kitty.hackathon.kittybank.utils.Utils;
 
-public class TransactMoneyActivity extends Activity {
+public class TransactMoneyActivity extends BaseActivity {
     private EditText etBalance;
     private EditText etReceiverAccount;
     private EditText etReceiverName;

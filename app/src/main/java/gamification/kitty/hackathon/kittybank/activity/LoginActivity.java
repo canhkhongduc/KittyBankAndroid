@@ -14,14 +14,13 @@ import com.google.gson.Gson;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
-import gamification.kitty.hackathon.kittybank.R;
 import gamification.kitty.hackathon.kittybank.callback.IVolleyCallback;
 import gamification.kitty.hackathon.kittybank.entity.User;
 import gamification.kitty.hackathon.kittybank.request.LoginRequest;
 import gamification.kitty.hackathon.kittybank.request.LoginRequestManagement;
 import gamification.kitty.hackathon.kittybank.utils.Utils;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends BaseActivity {
     private EditText etAccount;
     private EditText etPassword;
     private Button submitButton;
@@ -59,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
                                 user1.setBalance(loginRequest.getBalance());
                                 user1.setCreditPoint(loginRequest.getCreditPoint());
                                 Utils.saveUserToSharedPreferences(getApplicationContext(), user1);
-                                startActivity(new Intent(LoginActivity.this, BankActivity.class));
+                                startActivity(new Intent(LoginActivity.this, StoreActivity.class));
                             } catch (ParseException e) {
                                 e.printStackTrace();
                             }
@@ -73,19 +72,6 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(getApplicationContext(), "Xin vui lòng nhập lại số tài khoản và mật khẩu", Toast.LENGTH_LONG).show();
                 }
-                final User user = new User(etAccount.getText().toString(), etPassword.getText().toString());
-                Log.d("user", user.getAccountNumber());
-                lrm.authenticate(new IVolleyCallback() {
-                    @Override
-                    public void onSuccess(String result) {
-                        Utils.saveUserToSharedPreferences(getApplicationContext(), user);
-                        startActivity(new Intent(LoginActivity.this, BankActivity.class));
-                    }
-                    @Override
-                    public void onFailure(String result) {
-                        Toast.makeText(getApplicationContext(), "Xin vui lòng nhập lại số tài khoản và mật khẩu", Toast.LENGTH_LONG).show();
-                    }
-                }, user);
             }
         });
 

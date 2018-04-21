@@ -1,15 +1,11 @@
 package gamification.kitty.hackathon.kittybank.activity;
 
-import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
 
-import gamification.kitty.hackathon.kittybank.R;
-
-public class TransactActivity extends AppCompatActivity {
+public class TransactActivity extends BaseActivity {
     private CardView cvAccount;
     private CardView cvMoneyTransact;
     @Override
