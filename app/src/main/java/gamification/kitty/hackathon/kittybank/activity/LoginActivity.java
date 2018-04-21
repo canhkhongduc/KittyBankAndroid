@@ -1,4 +1,4 @@
-package gamification.kitty.hackathon.kittybank.login;
+package gamification.kitty.hackathon.kittybank.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -73,6 +73,19 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(getApplicationContext(), "Xin vui lòng nhập lại số tài khoản và mật khẩu", Toast.LENGTH_LONG).show();
                 }
+                final User user = new User(etAccount.getText().toString(), etPassword.getText().toString());
+                Log.d("user", user.getAccountNumber());
+                lrm.authenticate(new IVolleyCallback() {
+                    @Override
+                    public void onSuccess(String result) {
+                        Utils.saveUserToSharedPreferences(getApplicationContext(), user);
+                        startActivity(new Intent(LoginActivity.this, BankActivity.class));
+                    }
+                    @Override
+                    public void onFailure(String result) {
+                        Toast.makeText(getApplicationContext(), "Xin vui lòng nhập lại số tài khoản và mật khẩu", Toast.LENGTH_LONG).show();
+                    }
+                }, user);
             }
         });
 
