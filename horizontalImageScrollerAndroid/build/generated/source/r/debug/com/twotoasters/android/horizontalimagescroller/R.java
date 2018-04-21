@@ -7,12 +7,6 @@
 package com.twotoasters.android.horizontalimagescroller;
 
 public final class R {
-    public static final class attr {
-        public static int freezesAnimation = 0x7f040001;
-        public static int gifSource = 0x7f040002;
-        public static int isOpaque = 0x7f040003;
-        public static int loopCount = 0x7f040004;
-    }
     public static final class color {
         public static int default_frame_color = 0x7f060001;
         public static int default_frame_off_color = 0x7f060002;
@@ -32,13 +26,5 @@ public final class R {
     }
     public static final class layout {
         public static int horizontal_image_scroller_item = 0x7f0f0001;
-    }
-    public static final class styleable {
-        public static int[] GifTextureView = { 0x7f040002, 0x7f040003 };
-        public static int GifTextureView_gifSource = 0;
-        public static int GifTextureView_isOpaque = 1;
-        public static int[] GifView = { 0x7f040001, 0x7f040004 };
-        public static int GifView_freezesAnimation = 0;
-        public static int GifView_loopCount = 1;
     }
 }
