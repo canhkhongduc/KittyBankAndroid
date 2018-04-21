@@ -163,7 +163,8 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:hint="Nhập số tiền"
-                                        android:inputType="number" />
+                                        android:inputType="number"
+                                        android:textColor="@color/accent" />
                                 </android.support.design.widget.TextInputLayout>
                             </LinearLayout>
 
@@ -274,7 +275,8 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="match_parent"
                                         android:hint="Nhập tin nhắn"
-                                        android:inputType="text" />
+                                        android:inputType="text"
+                                        android:textColor="@color/accent" />
                                 </android.support.design.widget.TextInputLayout>
                             </LinearLayout>
 
