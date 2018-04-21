@@ -8,7 +8,8 @@ public enum ERestApiEndpoints {
     GET_KITTIES_ENDPOINT("api/kitty"),
     GET_FOODS_ENDPOINT("api/kitty"),
     GET_KITTY_BY_ID_ENDPOINT("api/kitty"),
-    POST_AUTHENTICATE("api/user/authenticate");
+    POST_AUTHENTICATE("api/user/authenticate"),
+    POST_UPDATE_TRANSACTION("api/transaction");
 
     private final String HOST_URL = "http://10.0.2.2:8081/";
 

@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="gamification.kitty.hackathon.kittybank.activity.TransactMoneyActivity">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="500dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <android.support.v7.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="500dp"
+                    android:orientation="vertical"
+                    android:weightSum="10">
+
+                    <android.support.v7.widget.CardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="2"
+                        app:cardBackgroundColor="@color/emerald">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <View
+                                android:layout_width="fill_parent"
+                                android:layout_height="1dp"
+                                android:background="#FFF" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="45dp"
+                                android:orientation="horizontal"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Chuyển từ"
+                                    android:textColor="@color/accent"
+                                    android:textSize="20sp" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="fill_parent"
+                                android:layout_height="1dp"
+                                android:background="#FFF" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:orientation="horizontal"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:id="@+id/tvAccountFullName"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Khong Duc Canh"
+                                    android:textAlignment="textEnd"
+                                    android:textColor="@color/accent"
+                                    android:textSize="20sp" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="fill_parent"
+                                android:layout_height="1dp"
+                                android:background="#FFF" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:orientation="horizontal"
+                                android:weightSum="2">
+
+
+                                <TextView
+                                    android:id="@+id/tvAccountBalance"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="0989284470"
+                                    android:textAlignment="textEnd"
+                                    android:textColor="@color/accent"
+                                    android:textSize="20sp" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="fill_parent"
+                                android:layout_height="1dp"
+                                android:background="#FFF" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:orientation="horizontal"
+                                android:weightSum="2">
+
+                                <TextView
+                                    android:id="@+id/tvAccountSpendable"
+                                    android:layout_width="0dp"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="500,000 VND"
+                                    android:textAlignment="textEnd"
+                                    android:textColor="@color/accent"
+                                    android:textSize="20sp" />
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="fill_parent"
+                                android:layout_height="1dp"
+                                android:background="#FFF" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="65dp"
+                                android:orientation="horizontal"
+                                android:weightSum="4">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="VND"
+                                    android:textColor="@color/accent"
+                                    android:textSize="20sp" />
+
+                                <android.support.design.widget.TextInputLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginBottom="8dp"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_weight="3"
+                                    android:focusableInTouchMode="false">
+
+                                    <EditText
+                                        android:id="@+id/input_balance"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:hint="Nhập số tiền"
+                                        android:inputType="number" />
+                                </android.support.design.widget.TextInputLayout>
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="fill_parent"
+                                android:layout_height="1dp"
+                                android:background="#FFF" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="45dp"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_weight="1"
+                                    android:text="Chuyển tới"
+                                    android:textColor="@color/accent"
+                                    android:textSize="20sp" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="fill_parent"
+                                android:layout_height="1dp"
+                                android:background="#FFF" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="65dp"
+                                android:orientation="horizontal">
+
+                                <android.support.design.widget.TextInputLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginBottom="8dp"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_weight="3">
+
+                                    <EditText
+                                        android:id="@+id/input_reveiver_account"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:hint="Nhập số tài khoản"
+                                        android:inputType="number"
+                                        android:textColor="@color/accent" />
+                                </android.support.design.widget.TextInputLayout>
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="fill_parent"
+                                android:layout_height="1dp"
+                                android:background="#FFF" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="65dp"
+                                android:orientation="horizontal">
+
+                                <android.support.design.widget.TextInputLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginBottom="8dp"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_weight="3">
+
+                                    <EditText
+                                        android:id="@+id/input_receiver_name"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:hint="Nhập tên người nhận"
+                                        android:inputType="text"
+                                        android:textColor="@color/accent" />
+                                </android.support.design.widget.TextInputLayout>
+
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="fill_parent"
+                                android:layout_height="1dp"
+                                android:background="#FFF" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="55dp"
+                                android:orientation="horizontal"
+                                android:weightSum="4">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="1"
+                                    android:text="Tin nhắn"
+                                    android:textColor="@color/accent"
+                                    android:textSize="20sp" />
+
+                                <android.support.design.widget.TextInputLayout
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_marginBottom="8dp"
+                                    android:layout_marginTop="8dp"
+                                    android:layout_weight="3">
+
+                                    <EditText
+                                        android:id="@+id/input_message"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="match_parent"
+                                        android:hint="Nhập tin nhắn"
+                                        android:inputType="text" />
+                                </android.support.design.widget.TextInputLayout>
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="fill_parent"
+                                android:layout_height="1dp"
+                                android:background="#FFF" />
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="65dp"
+                                android:orientation="horizontal"
+                                android:weightSum="5">
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="2"
+                                    android:text="Ngày chuyển"
+                                    android:textColor="@color/accent"
+                                    android:textSize="20sp" />
+
+                                <TextView
+                                    android:layout_width="0dp"
+                                    android:layout_height="match_parent"
+                                    android:layout_gravity="center"
+                                    android:layout_weight="3"
+                                    android:text="Hôm nay, 21/04/2018"
+                                    android:textColor="@color/accent"
+                                    android:textSize="20sp" />
+                            </LinearLayout>
+
+                            <View
+                                android:layout_width="fill_parent"
+                                android:layout_height="1dp"
+                                android:background="#FFF" />
+
+                        </LinearLayout>
+
+
+                    </android.support.v7.widget.CardView>
+
+
+                </LinearLayout>
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_weight="2">
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_next"
+        android:layout_weight="1"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/emerald"
+        android:padding="12dp"
+        android:text="Tiếp tục"
+        android:textColor="@color/accent" />
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/btn_cancel"
+            android:layout_weight="1"
+            android:layout_width="fill_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="24dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/emerald"
+            android:padding="12dp"
+            android:text="Hủy"
+            android:textColor="@color/accent" />
+    </LinearLayout>
+</LinearLayout>

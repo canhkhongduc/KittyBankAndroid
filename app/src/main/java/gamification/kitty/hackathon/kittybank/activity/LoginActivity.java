@@ -10,13 +10,11 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 import gamification.kitty.hackathon.kittybank.R;
-import gamification.kitty.hackathon.kittybank.activity.HomeActivity;
 import gamification.kitty.hackathon.kittybank.callback.IVolleyCallback;
 import gamification.kitty.hackathon.kittybank.entity.User;
 import gamification.kitty.hackathon.kittybank.request.LoginRequest;
@@ -58,8 +56,10 @@ public class LoginActivity extends AppCompatActivity {
                                 user1.setAccountNumber(loginRequest.getAccountNumber());
                                 user1.setFullName(loginRequest.getFullName());
                                 user1.setDob(dobSqlDate);
+                                user1.setBalance(loginRequest.getBalance());
+                                user1.setCreditPoint(loginRequest.getCreditPoint());
                                 Utils.saveUserToSharedPreferences(getApplicationContext(), user1);
-                                startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                                startActivity(new Intent(LoginActivity.this, BankActivity.class));
                             } catch (ParseException e) {
                                 e.printStackTrace();
                             }
