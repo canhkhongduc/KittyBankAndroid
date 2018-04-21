@@ -4,6 +4,7 @@
     <color name="primary_dark">#006600</color>
     <color name="primary_darker">#003300</color>
     <color name="accent">#ffffff</color>
+    <color name="primary_lighter">#00bf3f</color>
 
     <color name="black">#000000</color>
     <color name="jet">#222222</color>
@@ -16,4 +17,8 @@
     <color name="white">#FFFFFF</color>
     <color name="light_blue">#66ccff</color>
     <color name="light_pink">#ff80b3</color>
+    <color name="emerald">#27ae60</color>
+    <color name="peterRiver">#2980b9</color>
+    <color name="carrot">#d35400</color>
+    <color name="alizarin">#c0392b</color>
 </resources>
