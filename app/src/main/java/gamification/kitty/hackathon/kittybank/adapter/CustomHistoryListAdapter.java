@@ -13,7 +13,7 @@ import android.widget.TextView;
 import java.text.DecimalFormat;
 import java.util.List;
 
-import gamification.kitty.hackathon.kittybank.R;
+import gamification.kitty.hackathon.kittybank.activity.R;
 import gamification.kitty.hackathon.kittybank.activity.TransactActivity;
 import gamification.kitty.hackathon.kittybank.entity.Transaction;
 import gamification.kitty.hackathon.kittybank.entity.User;

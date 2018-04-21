@@ -5,7 +5,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import gamification.kitty.hackathon.kittybank.R;
+import gamification.kitty.hackathon.kittybank.activity.R;
+
 
 /**
  * Created by Khổng Cảnh on 4/21/2018.

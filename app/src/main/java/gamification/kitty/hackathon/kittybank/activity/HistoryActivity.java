@@ -15,7 +15,6 @@ import com.google.gson.reflect.TypeToken;
 
 import java.util.List;
 
-import gamification.kitty.hackathon.kittybank.R;
 import gamification.kitty.hackathon.kittybank.adapter.CustomHistoryListAdapter;
 import gamification.kitty.hackathon.kittybank.callback.IVolleyCallback;
 import gamification.kitty.hackathon.kittybank.entity.ItemStore;

@@ -14,18 +14,20 @@
         <activity
             android:name=".LoginActivity"
             android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".BankActivity" />
         <activity android:name=".TransactActivity" />
         <activity android:name=".AccountDetailActivity" />
         <activity android:name=".TransactMoneyActivity"></activity>
         <activity android:name=".StoreActivity" />
+        <activity android:name=".HistoryActivity" />
         <activity android:name=".HomeKittyActivity" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".ProfileActivity" />
     </application>
