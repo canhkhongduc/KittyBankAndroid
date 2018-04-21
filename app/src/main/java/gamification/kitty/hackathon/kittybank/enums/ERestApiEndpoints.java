@@ -6,7 +6,7 @@ package gamification.kitty.hackathon.kittybank.enums;
 
 public enum ERestApiEndpoints {
     GET_KITTIES_ENDPOINT("api/kitty"),
-    GET_FOODS_ENDPOINT("api/kitty"),
+    GET_FOODS_ENDPOINT("api/food"),
     GET_KITTY_BY_ID_ENDPOINT("api/kitty"),
     POST_AUTHENTICATE("api/user/authenticate");
 
