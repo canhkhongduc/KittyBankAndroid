@@ -51,7 +51,7 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void onSuccess(String result) {
                         Utils.saveUserToSharedPreferences(getApplicationContext(), user);
-                        startActivity(new Intent(LoginActivity.this, HomeActivity.class));
+                        startActivity(new Intent(LoginActivity.this, BankActivity.class));
                     }
                 }, user);
             }
