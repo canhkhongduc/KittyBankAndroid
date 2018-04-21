@@ -45,7 +45,8 @@ public class Utils {
         preferenceEditor.putInt("userId", user.getId());
         preferenceEditor.putString("accountNumber", user.getAccountNumber());
         preferenceEditor.putString("fullName", user.getFullName());
-        preferenceEditor.putString("creditPoint", Integer.toString(user.getCreditPoint()));
+        preferenceEditor.putFloat("balance", (float) user.getBalance());
+        preferenceEditor.putInt("creditPoint", user.getCreditPoint());
         preferenceEditor.apply();
 
     }
@@ -54,11 +55,21 @@ public class Utils {
         int id = preference.getInt("userId", 0);
         String accountNumber = preference.getString("accountNumber", null);
         String fullName = preference.getString("fullName", null);
+        Double balance = Double.parseDouble(""+ preference.getFloat("balance", 0));
+        int creditPoint = preference.getInt("creditPoint", 0);
         User user = new User();
         user.setId(id);
         user.setFullName(fullName);
         user.setAccountNumber(accountNumber);
+        user.setCreditPoint(creditPoint);
+        user.setBalance(balance);
         return user;
+    }
+    public static void destroySharedpreference(Context context){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.clear();
+        editor.commit();
     }
 
 }

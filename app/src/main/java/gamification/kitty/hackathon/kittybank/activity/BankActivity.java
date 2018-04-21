@@ -1,8 +1,10 @@
 package gamification.kitty.hackathon.kittybank.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -12,12 +14,17 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import gamification.kitty.hackathon.kittybank.R;
+import gamification.kitty.hackathon.kittybank.entity.User;
+import gamification.kitty.hackathon.kittybank.utils.Utils;
 
 public class BankActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
+    private TextView tvUserFullname;
+    private TextView tvAccountNumber;
+    private CardView cvTransact;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +35,19 @@ public class BankActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        tvAccountNumber = findViewById(R.id.tvUserCIF);
+        tvUserFullname = findViewById(R.id.tvUsername);
+        User user = Utils.getUserFromSharedPreference(this);
+        tvUserFullname.setText(user.getFullName());
+        tvAccountNumber.setText("CIF: " + user.getAccountNumber());
+        cvTransact = findViewById(R.id.cvTransact);
+        cvTransact.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(BankActivity.this, TransactActivity.class));
+            }
+        });
     }
 
     @Override
@@ -80,6 +100,9 @@ public class BankActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_send) {
 
+        } else if (id == R.id.nav_logout){
+            Utils.destroySharedpreference(getApplicationContext());
+            startActivity(new Intent(BankActivity.this, LoginActivity.class));
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -56,6 +56,7 @@ public class LoginActivity extends AppCompatActivity {
                                 user1.setAccountNumber(loginRequest.getAccountNumber());
                                 user1.setFullName(loginRequest.getFullName());
                                 user1.setDob(dobSqlDate);
+                                user1.setBalance(loginRequest.getBalance());
                                 user1.setCreditPoint(loginRequest.getCreditPoint());
                                 Utils.saveUserToSharedPreferences(getApplicationContext(), user1);
                                 startActivity(new Intent(LoginActivity.this, StoreActivity.class));

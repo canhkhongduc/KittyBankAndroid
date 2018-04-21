@@ -36,7 +36,7 @@ public class StoreActivity extends AppCompatActivity {
         lvItemStore = (ListView) findViewById(R.id.lvItemStore);
         //Get CP from sharedPreference
         SharedPreferences preference = PreferenceManager.getDefaultSharedPreferences(this);
-        String creditPoint = preference.getString("creditPoint", null);
+        int creditPoint = preference.getInt("creditPoint",0);
         tvCreditPoint.setText("CP: "+creditPoint);
         storeRequestManagement = new StoreRequestManagement(getApplicationContext());
         storeRequestManagement.getItemStore(new IVolleyCallback() {

@@ -1,23 +1,38 @@
 package gamification.kitty.hackathon.kittybank.entity;
 
+import java.sql.Date;
+
 /**
  * Created by Khổng Cảnh on 4/20/2018.
  */
 
 public class Transaction {
     private int id;
-    private int senderId;
-    private int receiverId;
+    private String senderAccount;
+    private String receiverAccount;
+    private String receiverName;
     private float balance;
-    private int date;
+    private Date date;
     private int typeId;
     private String message;
     private int creditPoint;
 
-    public Transaction(int id, int senderId, int receiverId, float balance, int date, int typeId, String message, int creditPoint) {
+    public Transaction(int id, String senderAccount, String receiverAccount, String receiverName, float balance, Date date, int typeId, String message, int creditPoint) {
         this.id = id;
-        this.senderId = senderId;
-        this.receiverId = receiverId;
+        this.senderAccount = senderAccount;
+        this.receiverAccount = receiverAccount;
+        this.receiverName = receiverName;
+        this.balance = balance;
+        this.date = date;
+        this.typeId = typeId;
+        this.message = message;
+        this.creditPoint = creditPoint;
+    }
+
+    public Transaction(String senderAccount, String receiverAccount, String receiverName, float balance, Date date, int typeId, String message, int creditPoint) {
+        this.senderAccount = senderAccount;
+        this.receiverAccount = receiverAccount;
+        this.receiverName = receiverName;
         this.balance = balance;
         this.date = date;
         this.typeId = typeId;
@@ -29,24 +44,40 @@ public class Transaction {
         return id;
     }
 
+    public void setSenderAccount(String senderAccount) {
+        this.senderAccount = senderAccount;
+    }
+
+    public void setReceiverAccount(String receiverAccount) {
+        this.receiverAccount = receiverAccount;
+    }
+
+    public String getReceiverName() {
+        return receiverName;
+    }
+
+    public void setReceiverName(String receiverName) {
+        this.receiverName = receiverName;
+    }
+
     public void setId(int id) {
         this.id = id;
     }
 
-    public int getSenderId() {
-        return senderId;
+    public String getSenderAccount() {
+        return senderAccount;
     }
 
-    public void setSenderId(int senderId) {
-        this.senderId = senderId;
+    public void setSenderId(String senderId) {
+        this.senderAccount = senderAccount;
     }
 
-    public int getReceiverId() {
-        return receiverId;
+    public String getReceiverAccount() {
+        return receiverAccount;
     }
 
-    public void setReceiverId(int receiverId) {
-        this.receiverId = receiverId;
+    public void setReceiverId(String receiverAccount) {
+        this.receiverAccount = receiverAccount;
     }
 
     public float getBalance() {
@@ -57,11 +88,11 @@ public class Transaction {
         this.balance = balance;
     }
 
-    public int getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(int date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 

@@ -20,14 +20,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activity.StoreActivity" >
-
-        </activity>
-        <activity android:name=".activity.HomeKittyActivity"></activity>
-        <activity
-            android:name=".activity.BankActivity"
-            android:label="@string/title_activity_bank"
-            android:theme="@style/AppTheme"></activity>
+        <activity android:name=".activity.StoreActivity" />
+        <activity android:name=".activity.BankActivity" />
+        <activity android:name=".activity.HomeKittyActivity" />
+        <activity android:name=".activity.TransactActivity" />
+        <activity android:name=".activity.AccountDetailActivity" />
+        <activity android:name=".activity.TransactMoneyActivity"></activity>
     </application>
 
 </manifest>
