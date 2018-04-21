@@ -1,19 +1,10 @@
-package gamification.kitty.hackathon.kittybank.entity;
-
-import com.google.gson.JsonElement;
-import com.google.gson.JsonPrimitive;
-import com.google.gson.JsonSerializationContext;
-import com.google.gson.JsonSerializer;
-
-import java.io.Serializable;
-import java.lang.reflect.Type;
-import java.sql.Date;
+package gamification.kitty.hackathon.kittybank.request;
 
 /**
- * Created by Khổng Cảnh on 4/20/2018.
+ * Created by Khổng Cảnh on 4/21/2018.
  */
 
-public class User implements Serializable {
+public class LoginRequest {
     private int id;
     private String accountNumber;
     private String password;
@@ -22,7 +13,7 @@ public class User implements Serializable {
     private String fullName;
     private byte gender;
     private int age;
-    private Date dob;
+    private String dob;
     private double balance;
     private int creditPoint;
     private Double savingBalance;
@@ -31,21 +22,10 @@ public class User implements Serializable {
     private boolean hasInternetBanking;
     private boolean useVPP;
     private boolean useDream;
-    private Date joinDate;
+    private String joinDate;
     private byte isDeleted;
 
-    public User() {
-    }
-
-    public User(String accountNumber, String password) {
-        this.accountNumber = accountNumber;
-        this.password = password;
-    }
-
-    public User(int id, String accountNumber, String password, String email, String phone,
-                String fullName, byte gender, int age, Date dob, double balance, int creditPoint,
-                Double savingBalance, int rankId, boolean hasCreditCard, boolean hasInternetBanking,
-                boolean useVPP, boolean useDream,Date joinDate, byte isDeleted) {
+    public LoginRequest(int id, String accountNumber, String password, String email, String phone, String fullName, byte gender, int age, String dob, double balance, int creditPoint, Double savingBalance, int rankId, boolean hasCreditCard, boolean hasInternetBanking, boolean useVPP, boolean useDream, String joinDate, byte isDeleted) {
         this.id = id;
         this.accountNumber = accountNumber;
         this.password = password;
@@ -65,14 +45,6 @@ public class User implements Serializable {
         this.useDream = useDream;
         this.joinDate = joinDate;
         this.isDeleted = isDeleted;
-    }
-
-    public Date getJoinDate() {
-        return joinDate;
-    }
-
-    public void setJoinDate(Date joinDate) {
-        this.joinDate = joinDate;
     }
 
     public int getId() {
@@ -139,11 +111,11 @@ public class User implements Serializable {
         this.age = age;
     }
 
-    public Date getDob() {
+    public String getDob() {
         return dob;
     }
 
-    public void setDob(Date dob) {
+    public void setDob(String dob) {
         this.dob = dob;
     }
 
@@ -211,6 +183,14 @@ public class User implements Serializable {
         this.useDream = useDream;
     }
 
+    public String getJoinDate() {
+        return joinDate;
+    }
+
+    public void setJoinDate(String joinDate) {
+        this.joinDate = joinDate;
+    }
+
     public byte getIsDeleted() {
         return isDeleted;
     }
@@ -218,5 +198,4 @@ public class User implements Serializable {
     public void setIsDeleted(byte isDeleted) {
         this.isDeleted = isDeleted;
     }
-
 }

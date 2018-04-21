@@ -40,6 +40,11 @@ public class StoreActivity extends AppCompatActivity {
                     Log.d("error",e.toString());
                 }
             }
+
+            @Override
+            public void onFailure(String message) {
+
+            }
         });
 
 

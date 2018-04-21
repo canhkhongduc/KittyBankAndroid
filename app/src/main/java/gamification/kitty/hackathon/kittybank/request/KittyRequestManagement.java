@@ -60,7 +60,7 @@ public class KittyRequestManagement {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.d("error", error.toString()); //fix hard code
-                callback.onFail("Can not get kitty");
+                callback.onFailure(error.toString());
             }
         }) {
             @Override
