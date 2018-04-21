@@ -56,8 +56,9 @@ public class LoginActivity extends AppCompatActivity {
                                 user1.setAccountNumber(loginRequest.getAccountNumber());
                                 user1.setFullName(loginRequest.getFullName());
                                 user1.setDob(dobSqlDate);
+                                user1.setCreditPoint(loginRequest.getCreditPoint());
                                 Utils.saveUserToSharedPreferences(getApplicationContext(), user1);
-                                startActivity(new Intent(LoginActivity.this, BankActivity.class));
+                                startActivity(new Intent(LoginActivity.this, StoreActivity.class));
                             } catch (ParseException e) {
                                 e.printStackTrace();
                             }
@@ -71,19 +72,6 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(getApplicationContext(), "Xin vui lòng nhập lại số tài khoản và mật khẩu", Toast.LENGTH_LONG).show();
                 }
-                final User user = new User(etAccount.getText().toString(), etPassword.getText().toString());
-                Log.d("user", user.getAccountNumber());
-                lrm.authenticate(new IVolleyCallback() {
-                    @Override
-                    public void onSuccess(String result) {
-                        Utils.saveUserToSharedPreferences(getApplicationContext(), user);
-                        startActivity(new Intent(LoginActivity.this, BankActivity.class));
-                    }
-                    @Override
-                    public void onFailure(String result) {
-                        Toast.makeText(getApplicationContext(), "Xin vui lòng nhập lại số tài khoản và mật khẩu", Toast.LENGTH_LONG).show();
-                    }
-                }, user);
             }
         });
 

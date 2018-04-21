@@ -17,6 +17,14 @@ public class ItemStore {
     public ItemStore() {
     }
 
+    public ItemStore(int id, String name, int price, String image, String description) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.image = image;
+        this.description = description;
+    }
+
     public ItemStore(int id, String name, int price, int experience, String image, int energy, byte isDeleted, String description) {
         this.id = id;
         this.name = name;

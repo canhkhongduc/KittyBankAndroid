@@ -45,6 +45,7 @@ public class Utils {
         preferenceEditor.putInt("userId", user.getId());
         preferenceEditor.putString("accountNumber", user.getAccountNumber());
         preferenceEditor.putString("fullName", user.getFullName());
+        preferenceEditor.putString("creditPoint", Integer.toString(user.getCreditPoint()));
         preferenceEditor.apply();
 
     }
