@@ -18,7 +18,7 @@ public class BankActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private TextView tvUserFullname;
     private TextView tvAccountNumber;
-    private CardView cvTransact;
+    private CardView cvTransact, cvKitty;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,10 +36,18 @@ public class BankActivity extends BaseActivity
         tvUserFullname.setText(user.getFullName());
         tvAccountNumber.setText("CIF: " + user.getAccountNumber());
         cvTransact = findViewById(R.id.cvTransact);
+        cvKitty = findViewById(R.id.cvKitty);
         cvTransact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(BankActivity.this, TransactActivity.class));
+            }
+        });
+
+        cvKitty.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(BankActivity.this, HomeKittyActivity.class));
             }
         });
     }
