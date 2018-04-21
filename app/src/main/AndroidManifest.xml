@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="gamification.kitty.hackathon.kittybank">
+    package="gamification.kitty.hackathon.kittybank.activity">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -12,13 +12,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".activity.LoginActivity"
+            android:name=".LoginActivity"
             android:theme="@style/AppTheme">
         </activity>
-        <activity android:name=".activity.StoreActivity" />
-        <activity android:name=".activity.HomeKittyActivity" />
-        <activity android:name=".activity.HomeActivity" />
-        <activity android:name=".activity.PetProfileActivity">
+        <activity android:name=".BankActivity" />
+        <activity android:name=".TransactActivity" />
+        <activity android:name=".AccountDetailActivity" />
+        <activity android:name=".TransactMoneyActivity"/>
+        <activity android:name=".StoreActivity" />
+        <activity android:name=".HomeKittyActivity" />
+        <activity android:name=".ProfileActivity" >
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

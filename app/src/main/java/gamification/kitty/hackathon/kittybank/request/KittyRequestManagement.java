@@ -60,6 +60,7 @@ public class KittyRequestManagement {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.d("error", error.toString()); //fix hard code
+                callback.onFailure(error.toString());
             }
         }) {
             @Override
@@ -127,7 +128,7 @@ public class KittyRequestManagement {
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         StringRequest postRequest = new StringRequest(
                 Request.Method.POST,
-                ERestApiEndpoints.GET_KITTY_BY_ID_ENDPOINT.toString(),
+                ERestApiEndpoints.GET_FEED_KITTY_ENDPOINT.toString(),
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -166,7 +167,7 @@ public class KittyRequestManagement {
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         StringRequest postRequest = new StringRequest(
                 Request.Method.POST,
-                ERestApiEndpoints.GET_KITTY_BY_ID_ENDPOINT.toString(),
+                ERestApiEndpoints.GET_BATH_KITTY_ENDPOINT.toString(),
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {

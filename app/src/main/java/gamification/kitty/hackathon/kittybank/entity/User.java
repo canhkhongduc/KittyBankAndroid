@@ -1,6 +1,12 @@
 package gamification.kitty.hackathon.kittybank.entity;
 
+import com.google.gson.JsonElement;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+
 import java.io.Serializable;
+import java.lang.reflect.Type;
 import java.sql.Date;
 
 /**
@@ -25,7 +31,11 @@ public class User implements Serializable {
     private boolean hasInternetBanking;
     private boolean useVPP;
     private boolean useDream;
+    private Date joinDate;
     private byte isDeleted;
+
+    public User() {
+    }
 
     public User(String accountNumber, String password) {
         this.accountNumber = accountNumber;
@@ -35,7 +45,7 @@ public class User implements Serializable {
     public User(int id, String accountNumber, String password, String email, String phone,
                 String fullName, byte gender, int age, Date dob, double balance, int creditPoint,
                 Double savingBalance, int rankId, boolean hasCreditCard, boolean hasInternetBanking,
-                boolean useVPP, boolean useDream, byte isDeleted) {
+                boolean useVPP, boolean useDream,Date joinDate, byte isDeleted) {
         this.id = id;
         this.accountNumber = accountNumber;
         this.password = password;
@@ -53,7 +63,16 @@ public class User implements Serializable {
         this.hasInternetBanking = hasInternetBanking;
         this.useVPP = useVPP;
         this.useDream = useDream;
+        this.joinDate = joinDate;
         this.isDeleted = isDeleted;
+    }
+
+    public Date getJoinDate() {
+        return joinDate;
+    }
+
+    public void setJoinDate(Date joinDate) {
+        this.joinDate = joinDate;
     }
 
     public int getId() {
@@ -199,4 +218,5 @@ public class User implements Serializable {
     public void setIsDeleted(byte isDeleted) {
         this.isDeleted = isDeleted;
     }
+
 }

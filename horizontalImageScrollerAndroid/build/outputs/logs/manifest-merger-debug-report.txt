@@ -1,0 +1,39 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\Stupid Projects\Hackathon_Frontend\KittyBankAndroid\horizontalImageScrollerAndroid\src\main\AndroidManifest.xml:1:1-10:12
+INJECTED from D:\Stupid Projects\Hackathon_Frontend\KittyBankAndroid\horizontalImageScrollerAndroid\src\main\AndroidManifest.xml:1:1-10:12
+INJECTED from D:\Stupid Projects\Hackathon_Frontend\KittyBankAndroid\horizontalImageScrollerAndroid\src\main\AndroidManifest.xml:1:1-10:12
+INJECTED from D:\Stupid Projects\Hackathon_Frontend\KittyBankAndroid\horizontalImageScrollerAndroid\src\main\AndroidManifest.xml:1:1-10:12
+INJECTED from D:\Stupid Projects\Hackathon_Frontend\KittyBankAndroid\horizontalImageScrollerAndroid\src\main\AndroidManifest.xml:1:1-10:12
+INJECTED from D:\Stupid Projects\Hackathon_Frontend\KittyBankAndroid\horizontalImageScrollerAndroid\src\main\AndroidManifest.xml:1:1-10:12
+INJECTED from D:\Stupid Projects\Hackathon_Frontend\KittyBankAndroid\horizontalImageScrollerAndroid\src\main\AndroidManifest.xml:1:1-10:12
+	package
+		ADDED from D:\Stupid Projects\Hackathon_Frontend\KittyBankAndroid\horizontalImageScrollerAndroid\src\main\AndroidManifest.xml:2:5-62
+		INJECTED from D:\Stupid Projects\Hackathon_Frontend\KittyBankAndroid\horizontalImageScrollerAndroid\src\main\AndroidManifest.xml
+		INJECTED from D:\Stupid Projects\Hackathon_Frontend\KittyBankAndroid\horizontalImageScrollerAndroid\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from D:\Stupid Projects\Hackathon_Frontend\KittyBankAndroid\horizontalImageScrollerAndroid\src\main\AndroidManifest.xml:4:5-32
+		INJECTED from D:\Stupid Projects\Hackathon_Frontend\KittyBankAndroid\horizontalImageScrollerAndroid\src\main\AndroidManifest.xml
+		INJECTED from D:\Stupid Projects\Hackathon_Frontend\KittyBankAndroid\horizontalImageScrollerAndroid\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\Stupid Projects\Hackathon_Frontend\KittyBankAndroid\horizontalImageScrollerAndroid\src\main\AndroidManifest.xml:1:11-69
+	android:versionCode
+		ADDED from D:\Stupid Projects\Hackathon_Frontend\KittyBankAndroid\horizontalImageScrollerAndroid\src\main\AndroidManifest.xml:3:5-28
+		INJECTED from D:\Stupid Projects\Hackathon_Frontend\KittyBankAndroid\horizontalImageScrollerAndroid\src\main\AndroidManifest.xml
+		INJECTED from D:\Stupid Projects\Hackathon_Frontend\KittyBankAndroid\horizontalImageScrollerAndroid\src\main\AndroidManifest.xml
+uses-sdk
+ADDED from D:\Stupid Projects\Hackathon_Frontend\KittyBankAndroid\horizontalImageScrollerAndroid\src\main\AndroidManifest.xml:6:5-73
+INJECTED from D:\Stupid Projects\Hackathon_Frontend\KittyBankAndroid\horizontalImageScrollerAndroid\src\main\AndroidManifest.xml:6:5-73
+INJECTED from D:\Stupid Projects\Hackathon_Frontend\KittyBankAndroid\horizontalImageScrollerAndroid\src\main\AndroidManifest.xml:6:5-73
+INJECTED from D:\Stupid Projects\Hackathon_Frontend\KittyBankAndroid\horizontalImageScrollerAndroid\src\main\AndroidManifest.xml:6:5-73
+INJECTED from D:\Stupid Projects\Hackathon_Frontend\KittyBankAndroid\horizontalImageScrollerAndroid\src\main\AndroidManifest.xml:6:5-73
+	android:targetSdkVersion
+		ADDED from D:\Stupid Projects\Hackathon_Frontend\KittyBankAndroid\horizontalImageScrollerAndroid\src\main\AndroidManifest.xml:6:41-70
+		INJECTED from D:\Stupid Projects\Hackathon_Frontend\KittyBankAndroid\horizontalImageScrollerAndroid\src\main\AndroidManifest.xml
+		INJECTED from D:\Stupid Projects\Hackathon_Frontend\KittyBankAndroid\horizontalImageScrollerAndroid\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from D:\Stupid Projects\Hackathon_Frontend\KittyBankAndroid\horizontalImageScrollerAndroid\src\main\AndroidManifest.xml:6:15-40
+		INJECTED from D:\Stupid Projects\Hackathon_Frontend\KittyBankAndroid\horizontalImageScrollerAndroid\src\main\AndroidManifest.xml
+		INJECTED from D:\Stupid Projects\Hackathon_Frontend\KittyBankAndroid\horizontalImageScrollerAndroid\src\main\AndroidManifest.xml
+application
+ADDED from D:\Stupid Projects\Hackathon_Frontend\KittyBankAndroid\horizontalImageScrollerAndroid\src\main\AndroidManifest.xml:8:5-20

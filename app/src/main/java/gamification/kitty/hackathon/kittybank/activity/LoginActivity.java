@@ -9,26 +9,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
+import com.google.gson.Gson;
 
-import org.json.JSONException;
-import org.json.JSONObject;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import gamification.kitty.hackathon.kittybank.R;
+import gamification.kitty.hackathon.kittybank.activity.R;
 import gamification.kitty.hackathon.kittybank.callback.IVolleyCallback;
 import gamification.kitty.hackathon.kittybank.entity.User;
+import gamification.kitty.hackathon.kittybank.request.LoginRequest;
 import gamification.kitty.hackathon.kittybank.request.LoginRequestManagement;
 import gamification.kitty.hackathon.kittybank.utils.Utils;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends BaseActivity {
     private EditText etAccount;
     private EditText etPassword;
     private Button submitButton;
@@ -44,16 +40,44 @@ public class LoginActivity extends AppCompatActivity {
         submitButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                final User user = new User(etAccount.getText().toString(), etPassword.getText().toString());
-                Log.d("user", user.getAccountNumber());
-                lrm.authenticate(new IVolleyCallback() {
-                    @Override
-                    public void onSuccess(String result) {
-                        Utils.saveUserToSharedPreferences(getApplicationContext(), user);
-                        startActivity(new Intent(LoginActivity.this, HomeActivity.class));
-                    }
-                }, user);
+                String accountNumber = etAccount.getText().toString();
+                String password = etPassword.getText().toString();
+                if (accountNumber.length() != 0 && password.length() != 0) {
+                    final User user = new User(accountNumber, password);
+                    lrm.authenticate(new IVolleyCallback() {
+                        @Override
+                        public void onSuccess(String result) {
+                            try {
+                                Log.d("json", result);
+                                Gson gson = new Gson();
+                                LoginRequest loginRequest = gson.fromJson(result, LoginRequest.class);
+                                SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy-MM-dd");
+                                java.util.Date dob = sdf1.parse(loginRequest.getDob());
+                                java.sql.Date dobSqlDate = new java.sql.Date(dob.getTime());
+                                User user1 = new User();
+                                user1.setId(loginRequest.getId());
+                                user1.setAccountNumber(loginRequest.getAccountNumber());
+                                user1.setFullName(loginRequest.getFullName());
+                                user1.setDob(dobSqlDate);
+                                user1.setBalance(loginRequest.getBalance());
+                                user1.setCreditPoint(loginRequest.getCreditPoint());
+                                Utils.saveUserToSharedPreferences(getApplicationContext(), user1);
+                                startActivity(new Intent(LoginActivity.this, StoreActivity.class));
+                            } catch (ParseException e) {
+                                e.printStackTrace();
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(String message) {
+                            Toast.makeText(getApplicationContext(), "Xin vui lòng nhập lại số tài khoản và mật khẩu", Toast.LENGTH_LONG).show();
+                        }
+                    }, user);
+                } else {
+                    Toast.makeText(getApplicationContext(), "Xin vui lòng nhập lại số tài khoản và mật khẩu", Toast.LENGTH_LONG).show();
+                }
             }
         });
+
     }
 }

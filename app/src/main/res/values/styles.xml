@@ -7,12 +7,39 @@
         <item name="colorPrimaryDark">@color/primary_dark</item>
         <item name="colorAccent">@color/primary_darker</item>
     </style>
+
     <style name="Widget.Design.TextInputLayout" parent="AppTheme">
 
     </style>
+
     <style name="PrimaryButton" parent="Theme.AppCompat">
         <item name="colorButtonNormal">@color/primary</item>
     </style>
 
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
 
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="CustomProgressBarHorizontalRed" parent="android:Widget.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/round_progress_red</item>
+        <item name="android:minHeight">10dip</item>
+        <item name="android:maxHeight">20dip</item>
+    </style>
+
+    <style name="CustomProgressBarHorizontalGreen" parent="android:Widget.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/round_progress_green</item>
+        <item name="android:minHeight">10dip</item>
+        <item name="android:maxHeight">20dip</item>
+    </style>
+
+    <style name="CustomProgressBarHorizontalBlue" parent="android:Widget.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/round_progress_blue</item>
+        <item name="android:minHeight">10dip</item>
+        <item name="android:maxHeight">20dip</item>
+    </style>
 </resources>

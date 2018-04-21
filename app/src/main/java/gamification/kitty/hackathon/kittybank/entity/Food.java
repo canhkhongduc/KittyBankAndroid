@@ -12,8 +12,9 @@ public class Food {
     private String image;
     private int energy;
     private byte isDeleted;
+    private String description;
 
-    public Food(int id, String name, int price, int experience, String image, int energy, byte isDeleted) {
+    public Food(int id, String name, int price, int experience, String image, int energy, byte isDeleted, String description) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -21,6 +22,15 @@ public class Food {
         this.image = image;
         this.energy = energy;
         this.isDeleted = isDeleted;
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getId() {

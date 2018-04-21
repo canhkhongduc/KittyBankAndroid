@@ -10,13 +10,25 @@ public class KittyType {
     private byte gender;
     private String image;
     private byte isDeleted;
+    private String description;
+    private int price;
 
-    public KittyType(int id, String name, byte gender, String image, byte isDeleted) {
+    public KittyType(int id, String name, byte gender, String image, byte isDeleted, String description, int price) {
         this.id = id;
         this.name = name;
         this.gender = gender;
         this.image = image;
         this.isDeleted = isDeleted;
+        this.description = description;
+        this.price = price;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getId() {
@@ -57,5 +69,13 @@ public class KittyType {
 
     public void setIsDeleted(byte isDeleted) {
         this.isDeleted = isDeleted;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 }

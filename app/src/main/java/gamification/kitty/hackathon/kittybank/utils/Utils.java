@@ -9,7 +9,6 @@ import com.google.gson.Gson;
 
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.Map;
@@ -45,9 +44,34 @@ public class Utils {
     public static void saveUserToSharedPreferences(Context context, User user){
         SharedPreferences preference = PreferenceManager.getDefaultSharedPreferences(context);
         SharedPreferences.Editor preferenceEditor = preference.edit();
-        preferenceEditor.putInt("userId", user.getId()).apply();
-        preferenceEditor.putString("userFullName", user.getFullName());
+        preferenceEditor.putInt("userId", user.getId());
         preferenceEditor.putString("accountNumber", user.getAccountNumber());
+        preferenceEditor.putString("fullName", user.getFullName());
+        preferenceEditor.putFloat("balance", (float) user.getBalance());
+        preferenceEditor.putInt("creditPoint", user.getCreditPoint());
+        preferenceEditor.apply();
+
+    }
+    public static User getUserFromSharedPreference(Context context){
+        SharedPreferences preference = PreferenceManager.getDefaultSharedPreferences(context);
+        int id = preference.getInt("userId", 0);
+        String accountNumber = preference.getString("accountNumber", null);
+        String fullName = preference.getString("fullName", null);
+        Double balance = Double.parseDouble(""+ preference.getFloat("balance", 0));
+        int creditPoint = preference.getInt("creditPoint", 0);
+        User user = new User();
+        user.setId(id);
+        user.setFullName(fullName);
+        user.setAccountNumber(accountNumber);
+        user.setCreditPoint(creditPoint);
+        user.setBalance(balance);
+        return user;
+    }
+    public static void destroySharedpreference(Context context){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(context);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.clear();
+        editor.commit();
     }
 
     public static JSONObject toJsonObject(Object object) {

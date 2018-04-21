@@ -6,4 +6,14 @@
     <string name="sign_in">Đăng nhập</string>
     <string name="egg">Trứng</string>
     <string name="quantity">Số lượng</string>
+    <string name="title_activity_bank">BankActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_settings">Settings</string>
+    <string name="btnShop">Cửa hàng</string>
+    <string name="btnHybrid">Lai tạo</string>
+    <string name="btnMission">Nhiệm vụ</string>
+    <string name="btnRank">Xếp hạng</string>
+    <string name="numberOfFood">x 5</string>
+    <string name="cp">CP:</string>
 </resources>
