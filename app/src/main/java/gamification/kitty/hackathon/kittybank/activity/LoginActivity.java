@@ -58,7 +58,7 @@ public class LoginActivity extends BaseActivity {
                                 user1.setBalance(loginRequest.getBalance());
                                 user1.setCreditPoint(loginRequest.getCreditPoint());
                                 Utils.saveUserToSharedPreferences(getApplicationContext(), user1);
-                                startActivity(new Intent(LoginActivity.this, StoreActivity.class));
+                                startActivity(new Intent(LoginActivity.this, HomeKittyActivity.class));
                             } catch (ParseException e) {
                                 e.printStackTrace();
                             }

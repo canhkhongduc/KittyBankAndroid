@@ -28,9 +28,6 @@ public class HomeKittyActivity extends BaseActivity {
 
         images.add(new ImageToLoadDrawableResource(R.drawable.dragon1));
         images.add(new ImageToLoadDrawableResource(R.drawable.dragon2));
-        images.add(new ImageToLoadDrawableResource(R.drawable.dragon3));
-        images.add(new ImageToLoadDrawableResource(R.drawable.dragon4));
-        images.add(new ImageToLoadDrawableResource(R.drawable.dragon5));
 
         HorizontalImageScrollerAdapter adapter = new HorizontalImageScrollerAdapter(this, images);
         adapter.setImageSize(550);
