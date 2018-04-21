@@ -20,4 +20,5 @@ android {
 dependencies {
     implementation 'com.google.guava:guava:13.0.1'
     implementation files('libs/commons-codec-1.6.jar')
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.12'
 }
