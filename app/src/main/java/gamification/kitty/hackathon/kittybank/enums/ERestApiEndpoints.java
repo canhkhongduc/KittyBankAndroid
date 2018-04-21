@@ -11,7 +11,9 @@ public enum ERestApiEndpoints {
     GET_ITEM_STORE_ENDPOINT("api/food/store"),
     GET_KITTY_BY_ID_ENDPOINT("api/kitty"),
     POST_AUTHENTICATE("api/user/authenticate"),
-    POST_UPDATE_TRANSACTION("api/transaction");
+    POST_UPDATE_TRANSACTION("api/transaction"),
+    GET_TRANSACTIONS_BY_USER_ACCOUNT("api/transaction/sender_or_receiver?accountNumber=");
+
 
     private final String HOST_URL = "http://10.0.2.2:8081/";
 
