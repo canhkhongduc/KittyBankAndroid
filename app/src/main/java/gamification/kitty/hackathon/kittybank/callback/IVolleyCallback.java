@@ -6,4 +6,5 @@ package gamification.kitty.hackathon.kittybank.callback;
 
 public interface IVolleyCallback {
     void onSuccess(String result);
+    void onFailure(String message);
 }

@@ -70,6 +70,7 @@ public class LoginRequestManagement {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Log.d("error", error.toString()); //fix hard code
+                callback.onFailure(error.toString());
             }
         }) {
             @Override

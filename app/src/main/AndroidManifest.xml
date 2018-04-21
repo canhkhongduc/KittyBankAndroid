@@ -20,9 +20,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".bank.HomeActivity" />
-        <activity android:name=".kitty.StoreActivity" />
-        <activity android:name=".kitty.HomeKittyActivity"></activity>
+        <activity android:name=".activity.HomeActivity" />
+        <activity android:name=".activity.StoreActivity" />
+        <activity android:name=".activity.HomeKittyActivity"></activity>
     </application>
 
 </manifest>
