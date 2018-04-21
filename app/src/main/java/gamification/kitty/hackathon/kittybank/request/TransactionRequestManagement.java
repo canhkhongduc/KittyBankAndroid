@@ -3,16 +3,22 @@ package gamification.kitty.hackathon.kittybank.request;
 import android.content.Context;
 import android.util.Log;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import gamification.kitty.hackathon.kittybank.callback.IVolleyCallback;
 import gamification.kitty.hackathon.kittybank.entity.Transaction;
@@ -80,4 +86,45 @@ public class TransactionRequestManagement {
         };
         requestQueue.add(postRequest);
     }
+    public void getTransactions(final IVolleyCallback callback, final String userAccount){
+
+        final int[] responseCode = new int[1];
+
+        // Build a request to check if the login token is valid
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        JSONObject json = new JSONObject();
+        try {
+            json.put("accountNumber", userAccount);
+            Log.d("json", json.toString());
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        StringRequest postRequest = new StringRequest(Request.Method.GET,
+                ERestApiEndpoints.GET_TRANSACTIONS_BY_USER_ACCOUNT.toString() + userAccount ,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        if (responseCode[0] == 200) {
+                            if (response != null) {
+                                callback.onSuccess(response.toString());
+                            }
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("error", error.toString()); //fix hard code
+                callback.onFailure(error.toString());
+            }
+        }) {
+            @Override
+            protected Response<String> parseNetworkResponse(NetworkResponse response) {
+                responseCode[0] = response.statusCode;
+                return super.parseNetworkResponse(response);
+            }
+        };
+        requestQueue.add(postRequest);
+    }
+
 }

@@ -9,8 +9,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -30,6 +32,9 @@ public class TransactMoneyActivity extends Activity {
     private EditText etMessage;
     private Button btnNext;
     private Button btnCancel;
+    private TextView tvAccountFullName;
+    private TextView tvAccountNumber;
+    private TextView tvSpendableBalance;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +44,13 @@ public class TransactMoneyActivity extends Activity {
         etReceiverName = findViewById(R.id.input_receiver_name);
         etMessage = findViewById(R.id.input_message);
         btnNext = findViewById(R.id.btn_next);
+        tvAccountFullName = findViewById(R.id.tvAccountFullName);
+        tvSpendableBalance = findViewById(R.id.tvAccountSpendable);
+        tvAccountNumber = findViewById(R.id.tvAccountBalance);
+        User user = Utils.getUserFromSharedPreference(this);
+        tvAccountFullName.setText(user.getFullName());
+        tvSpendableBalance.setText(new DecimalFormat("#,###.##").format(user.getBalance()) + " VND");
+        tvAccountNumber.setText(user.getAccountNumber());
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

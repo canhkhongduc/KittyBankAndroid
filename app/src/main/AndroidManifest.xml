@@ -25,7 +25,8 @@
         <activity android:name=".activity.HomeKittyActivity" />
         <activity android:name=".activity.TransactActivity" />
         <activity android:name=".activity.AccountDetailActivity" />
-        <activity android:name=".activity.TransactMoneyActivity"></activity>
+        <activity android:name=".activity.TransactMoneyActivity" />
+        <activity android:name=".activity.HistoryActivity"></activity>
     </application>
 
 </manifest>

@@ -25,6 +25,7 @@ public class BankActivity extends AppCompatActivity
     private TextView tvUserFullname;
     private TextView tvAccountNumber;
     private CardView cvTransact;
+    private CardView cvHistory;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +47,13 @@ public class BankActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(BankActivity.this, TransactActivity.class));
+            }
+        });
+        cvHistory = findViewById(R.id.cvHistory);
+        cvHistory.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(BankActivity.this, HistoryActivity.class));
             }
         });
     }
