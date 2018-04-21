@@ -17,12 +17,13 @@ public class Kitty {
     private int level;
     private int experience;
     private int rank;
-    private int duration;
-    private int lastFeeded;
-    private int lastShowered;
-    private byte isDeleted;
+    private boolean deleted;
+    private int hunger;
+    private int hygiene;
+    private String lastFeedDate;
+    private String lastBathDate;
 
-    public Kitty(int id, int userId, int kittyTypeId, String name, byte gender, String image, int price, int level, int experience, int rank, int duration, int lastFeeded, int lastShowered, byte isDeleted) {
+    public Kitty(int id, int userId, int kittyTypeId, String name, byte gender, String image, int price, int level, int experience, int rank, boolean deleted, int hunger, int hygiene, String lastFeedDate, String lastBathDate) {
         this.id = id;
         this.userId = userId;
         this.kittyTypeId = kittyTypeId;
@@ -33,10 +34,11 @@ public class Kitty {
         this.level = level;
         this.experience = experience;
         this.rank = rank;
-        this.duration = duration;
-        this.lastFeeded = lastFeeded;
-        this.lastShowered = lastShowered;
-        this.isDeleted = isDeleted;
+        this.deleted = deleted;
+        this.hunger = hunger;
+        this.hygiene = hygiene;
+        this.lastFeedDate = lastFeedDate;
+        this.lastBathDate = lastBathDate;
     }
 
     public int getId() {
@@ -119,35 +121,43 @@ public class Kitty {
         this.rank = rank;
     }
 
-    public int getDuration() {
-        return duration;
+    public boolean isDeleted() {
+        return deleted;
     }
 
-    public void setDuration(int duration) {
-        this.duration = duration;
+    public void setDeleted(boolean deleted) {
+        this.deleted = deleted;
     }
 
-    public int getLastFeeded() {
-        return lastFeeded;
+    public int getHunger() {
+        return hunger;
     }
 
-    public void setLastFeeded(int lastFeeded) {
-        this.lastFeeded = lastFeeded;
+    public void setHunger(int hunger) {
+        this.hunger = hunger;
     }
 
-    public int getLastShowered() {
-        return lastShowered;
+    public int getHygiene() {
+        return hygiene;
     }
 
-    public void setLastShowered(int lastShowered) {
-        this.lastShowered = lastShowered;
+    public void setHygiene(int hygiene) {
+        this.hygiene = hygiene;
     }
 
-    public byte getIsDeleted() {
-        return isDeleted;
+    public String getLastFeedDate() {
+        return lastFeedDate;
     }
 
-    public void setIsDeleted(byte isDeleted) {
-        this.isDeleted = isDeleted;
+    public void setLastFeedDate(String lastFeedDate) {
+        this.lastFeedDate = lastFeedDate;
+    }
+
+    public String getLastBathDate() {
+        return lastBathDate;
+    }
+
+    public void setLastBathDate(String lastBathDate) {
+        this.lastBathDate = lastBathDate;
     }
 }

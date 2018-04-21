@@ -10,7 +10,7 @@ public enum ERestApiEndpoints {
     GET_KITTY_BY_ID_ENDPOINT("api/kitty"),
     POST_AUTHENTICATE("api/user/authenticate");
 
-    private final String HOST_URL = "http://10.0.2.2:8081/";
+    private final String HOST_URL = "http://35.202.69.66:8081/";
 
     private String fullEndpoint;
 
@@ -20,6 +20,10 @@ public enum ERestApiEndpoints {
 
     public String getFullEndpoint() {
         return fullEndpoint;
+    }
+
+    public String getFullEndpointWithSpecificId(int id) {
+        return getFullEndpoint() + "/" + id;
     }
 
     @Override

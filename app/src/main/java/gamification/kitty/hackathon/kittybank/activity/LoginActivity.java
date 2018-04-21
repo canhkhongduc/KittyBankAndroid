@@ -23,7 +23,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import gamification.kitty.hackathon.kittybank.R;
-import gamification.kitty.hackathon.kittybank.bank.HomeActivity;
 import gamification.kitty.hackathon.kittybank.callback.IVolleyCallback;
 import gamification.kitty.hackathon.kittybank.entity.User;
 import gamification.kitty.hackathon.kittybank.request.LoginRequestManagement;
