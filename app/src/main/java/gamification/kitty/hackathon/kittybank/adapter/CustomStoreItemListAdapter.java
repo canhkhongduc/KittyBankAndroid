@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import gamification.kitty.hackathon.kittybank.R;
+import gamification.kitty.hackathon.kittybank.activity.R;
 import gamification.kitty.hackathon.kittybank.callback.IVolleyCallback;
 import gamification.kitty.hackathon.kittybank.entity.ItemStore;
 import gamification.kitty.hackathon.kittybank.request.StoreRequestManagement;
