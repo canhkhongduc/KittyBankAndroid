@@ -87,5 +87,9 @@ public class HomeKittyActivity extends BaseActivity implements RecyclerViewClick
         int id = kitties.get(itemPosition).getId();
         Log.d("test", id + "");
 
+        Intent intent = new Intent(HomeKittyActivity.this, ProfileActivity.class);
+        intent.putExtra("id", id);
+
+        startActivity(intent);
     }
 }
