@@ -7,6 +7,8 @@ import android.preference.PreferenceManager;
 
 import com.google.gson.Gson;
 
+import org.json.JSONException;
+import org.json.JSONObject;
 import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.Map;
@@ -72,5 +74,18 @@ public class Utils {
         editor.commit();
     }
 
+    public static JSONObject toJsonObject(Object object) {
+        Gson gson = new Gson();
+        String jsonString = gson.toJson(object);
+
+        try {
+            return new JSONObject(jsonString);
+        } catch (JSONException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+        return null;
+    }
 }
 

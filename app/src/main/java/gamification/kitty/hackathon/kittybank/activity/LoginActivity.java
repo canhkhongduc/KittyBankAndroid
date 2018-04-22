@@ -14,6 +14,10 @@ import com.google.gson.Gson;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import gamification.kitty.hackathon.kittybank.activity.R;
 import gamification.kitty.hackathon.kittybank.callback.IVolleyCallback;
 import gamification.kitty.hackathon.kittybank.entity.User;
 import gamification.kitty.hackathon.kittybank.request.LoginRequest;

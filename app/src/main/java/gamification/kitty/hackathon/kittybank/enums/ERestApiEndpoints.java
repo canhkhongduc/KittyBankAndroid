@@ -12,9 +12,10 @@ public enum ERestApiEndpoints {
     GET_KITTY_BY_ID_ENDPOINT("api/kitty"),
     POST_AUTHENTICATE("api/user/authenticate"),
     POST_UPDATE_TRANSACTION("api/transaction"),
+    GET_FEED_KITTY_ENDPOINT("api/kitty/feed"),
+    GET_BATH_KITTY_ENDPOINT("api/kitty/bath"),
     GET_KITTIES_BY_USER("api/kitty/search?query=userId:"),
     GET_TRANSACTIONS_BY_USER_ACCOUNT("api/transaction/sender_or_receiver?accountNumber=");
-
 
     private final String HOST_URL = "http://35.202.69.66:8081/";
 
@@ -26,6 +27,10 @@ public enum ERestApiEndpoints {
 
     public String getFullEndpoint() {
         return fullEndpoint;
+    }
+
+    public String getFullEndpointWithSpecificId(int id) {
+        return getFullEndpoint() + "/" + id;
     }
 
     @Override

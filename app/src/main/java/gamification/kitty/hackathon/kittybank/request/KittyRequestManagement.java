@@ -88,15 +88,15 @@ public class KittyRequestManagement {
 
         // Build a request to check if the login token is valid
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
-        JsonObjectRequest postRequest = new JsonObjectRequest(Request.Method.GET,
-                ERestApiEndpoints.GET_KITTY_BY_ID_ENDPOINT.toString(),
-                null,
-                new Response.Listener<JSONObject>() {
+        StringRequest postRequest = new StringRequest(
+                Request.Method.GET,
+                ERestApiEndpoints.GET_KITTY_BY_ID_ENDPOINT.getFullEndpointWithSpecificId(kittyId),
+                new Response.Listener<String>() {
                     @Override
-                    public void onResponse(JSONObject response) {
+                    public void onResponse(String response) {
                         if (responseCode[0] == 200) {
                             if (response != null) {
-                                callback.onSuccess(response.toString());
+                                callback.onSuccess(response);
                             }
                         }
                     }
@@ -110,12 +110,12 @@ public class KittyRequestManagement {
             @Override
             public Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params = new HashMap<>();
-                params.put("id", kittyId+"");
+                params.put("id", kittyId + "");
                 return params;
             }
 
             @Override
-            protected Response<JSONObject> parseNetworkResponse(NetworkResponse response) {
+            protected Response<String> parseNetworkResponse(NetworkResponse response) {
                 responseCode[0] = response.statusCode;
                 return super.parseNetworkResponse(response);
             }
@@ -123,12 +123,12 @@ public class KittyRequestManagement {
         requestQueue.add(postRequest);
     }
 
-    public void getKitties(final IVolleyCallback callback){
+    public void getKitties(final IVolleyCallback callback) {
         final int[] statusCode = new int[1];
         final RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         StringRequest stringRequest = new StringRequest(Request.Method.GET,
                 ERestApiEndpoints.GET_KITTIES_ENDPOINT.toString(),
-                new Response.Listener<String>(){
+                new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
                         if (statusCode[0] == 200) {
@@ -138,14 +138,14 @@ public class KittyRequestManagement {
                         }
                     }
                 },
-                new Response.ErrorListener(){
+                new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
                         Log.e("Error.Response", error.toString());
                         String json = null;
                         NetworkResponse response = error.networkResponse;
-                        if(response != null && response.data != null){
-                            switch(response.statusCode){
+                        if (response != null && response.data != null) {
+                            switch (response.statusCode) {
                                 case 400:
 
                                     json = new String(response.data);
@@ -155,8 +155,7 @@ public class KittyRequestManagement {
                             //Additional cases
                         }
                     }
-                })
-        {
+                }) {
             @Override
             protected Response<String> parseNetworkResponse(NetworkResponse response) {
                 statusCode[0] = response.statusCode;
@@ -165,6 +164,83 @@ public class KittyRequestManagement {
         };
         // Send request to the server
         requestQueue.add(stringRequest);
+    }
+
+    public void feedKittyRequest(final IVolleyCallback callback, final int kittyId, final int foodId) {
+        final int[] responseCode = new int[1];
+
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        StringRequest postRequest = new StringRequest(
+                Request.Method.POST,
+                ERestApiEndpoints.GET_FEED_KITTY_ENDPOINT.toString(),
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        if (responseCode[0] == 200) {
+                            if (response != null) {
+                                callback.onSuccess(response);
+                            }
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("error", error.toString()); //fix hard code
+            }
+        }) {
+            @Override
+            public Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("kittyId", kittyId + "");
+                params.put("foodId", foodId + "");
+                return params;
+            }
+
+            @Override
+            protected Response<String> parseNetworkResponse(NetworkResponse response) {
+                responseCode[0] = response.statusCode;
+                return super.parseNetworkResponse(response);
+            }
+        };
+        requestQueue.add(postRequest);
+    }
+
+    public void bathKittyRequest(final IVolleyCallback callback, final int kittyId) {
+        final int[] responseCode = new int[1];
+
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        StringRequest postRequest = new StringRequest(
+                Request.Method.POST,
+                ERestApiEndpoints.GET_BATH_KITTY_ENDPOINT.toString(),
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        if (responseCode[0] == 200) {
+                            if (response != null) {
+                                callback.onSuccess(response);
+                            }
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Log.d("error", error.toString()); //fix hard code
+            }
+        }) {
+            @Override
+            public Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("kittyId", kittyId + "");
+                return params;
+            }
+
+            @Override
+            protected Response<String> parseNetworkResponse(NetworkResponse response) {
+                responseCode[0] = response.statusCode;
+                return super.parseNetworkResponse(response);
+            }
+        };
+        requestQueue.add(postRequest);
     }
 }
 

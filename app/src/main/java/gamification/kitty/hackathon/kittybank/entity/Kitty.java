@@ -15,11 +15,11 @@ public class Kitty {
     private int level;
     private int experience;
     private int rank;
-    private int duration;
-    private int lastFeeded;
-    private int lastShowered;
     private boolean isDeleted;
     private int hunger;
+    private int hygiene;
+    private String lastFeedDate;
+    private String lastBathDate;
 
     public Kitty() {
     }
@@ -35,10 +35,11 @@ public class Kitty {
         this.level = level;
         this.experience = experience;
         this.rank = rank;
-        this.duration = duration;
-        this.lastFeeded = lastFeeded;
-        this.lastShowered = lastShowered;
         this.isDeleted = isDeleted;
+        this.hunger = hunger;
+        this.hygiene = hygiene;
+        this.lastFeedDate = lastFeedDate;
+        this.lastBathDate = lastBathDate;
     }
 
     public int getId() {
@@ -121,36 +122,12 @@ public class Kitty {
         this.rank = rank;
     }
 
-    public int getDuration() {
-        return duration;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
-    }
-
-    public int getLastFeeded() {
-        return lastFeeded;
-    }
-
-    public void setLastFeeded(int lastFeeded) {
-        this.lastFeeded = lastFeeded;
-    }
-
-    public int getLastShowered() {
-        return lastShowered;
-    }
-
-    public void setLastShowered(int lastShowered) {
-        this.lastShowered = lastShowered;
-    }
-
-    public boolean getIsDeleted() {
+    public boolean isDeleted() {
         return isDeleted;
     }
 
-    public void setIsDeleted(boolean isDeleted) {
-        this.isDeleted = isDeleted;
+    public void setDeleted(boolean deleted) {
+        this.isDeleted = deleted;
     }
 
     public int getHunger() {
@@ -159,5 +136,29 @@ public class Kitty {
 
     public void setHunger(int hunger) {
         this.hunger = hunger;
+    }
+
+    public int getHygiene() {
+        return hygiene;
+    }
+
+    public void setHygiene(int hygiene) {
+        this.hygiene = hygiene;
+    }
+
+    public String getLastFeedDate() {
+        return lastFeedDate;
+    }
+
+    public void setLastFeedDate(String lastFeedDate) {
+        this.lastFeedDate = lastFeedDate;
+    }
+
+    public String getLastBathDate() {
+        return lastBathDate;
+    }
+
+    public void setLastBathDate(String lastBathDate) {
+        this.lastBathDate = lastBathDate;
     }
 }
