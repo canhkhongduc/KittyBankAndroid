@@ -20,12 +20,12 @@ public class Kitty {
     private int duration;
     private int lastFeeded;
     private int lastShowered;
-    private byte isDeleted;
+    private boolean isDeleted;
 
     public Kitty() {
     }
 
-    public Kitty(int id, int userId, int kittyTypeId, String name, byte gender, String image, int price, int level, int experience, int rank, int duration, int lastFeeded, int lastShowered, byte isDeleted) {
+    public Kitty(int id, int userId, int kittyTypeId, String name, byte gender, String image, int price, int level, int experience, int rank, int duration, int lastFeeded, int lastShowered, boolean isDeleted) {
         this.id = id;
         this.userId = userId;
         this.kittyTypeId = kittyTypeId;
@@ -146,11 +146,11 @@ public class Kitty {
         this.lastShowered = lastShowered;
     }
 
-    public byte getIsDeleted() {
+    public boolean getIsDeleted() {
         return isDeleted;
     }
 
-    public void setIsDeleted(byte isDeleted) {
+    public void setIsDeleted(boolean isDeleted) {
         this.isDeleted = isDeleted;
     }
 }
