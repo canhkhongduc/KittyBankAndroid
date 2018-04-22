@@ -21,7 +21,10 @@ public class Kitty {
     private String lastFeedDate;
     private String lastBathDate;
 
-    public Kitty(int id, int userId, int kittyTypeId, String name, byte gender, String image, int price, int level, int experience, int rank, boolean isDeleted, int hunger, int hygiene, String lastFeedDate, String lastBathDate) {
+    public Kitty() {
+    }
+
+    public Kitty(int id, int userId, int kittyTypeId, String name, byte gender, String image, int price, int level, int experience, int rank, int duration, int lastFeeded, int lastShowered, boolean isDeleted) {
         this.id = id;
         this.userId = userId;
         this.kittyTypeId = kittyTypeId;

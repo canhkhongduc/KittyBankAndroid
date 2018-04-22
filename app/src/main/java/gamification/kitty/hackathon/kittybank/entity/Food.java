@@ -14,6 +14,9 @@ public class Food {
     private byte isDeleted;
     private String description;
 
+    public Food() {
+    }
+
     public Food(int id, String name, int price, int experience, String image, int energy, byte isDeleted, String description) {
         this.id = id;
         this.name = name;

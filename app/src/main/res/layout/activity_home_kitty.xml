@@ -51,7 +51,7 @@
         app:layout_constraintStart_toEndOf="@id/kitty_home_cp"
         app:layout_constraintTop_toTopOf="@id/kitty_home_apple" />
 
-    <com.twotoasters.android.horizontalimagescroller.widget.HorizontalImageScroller
+    <android.support.v7.widget.RecyclerView
         android:id="@+id/pet_slider"
         android:layout_width="match_parent"
         android:layout_height="0dp"
