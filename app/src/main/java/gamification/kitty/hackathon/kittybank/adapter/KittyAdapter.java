@@ -51,7 +51,7 @@ public class KittyAdapter extends RecyclerView.Adapter<KittyAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(KittyAdapter.ViewHolder holder, int position) {
-        Uri uri = Uri.parse("android.resource://gamification.kitty.hackathon.kittybank/drawable/" + kittyList.get(position).getImage() + "-static");
+        Uri uri = Uri.parse("android.resource://gamification.kitty.hackathon.kittybank/drawable/" + kittyList.get(position).getImage() + "_static");
         Uri uri2 = Uri.parse("android.resource://gamification.kitty.hackathon.kittybank/drawable/meat");
 
         holder.imgKitty.setImageURI(uri);
