@@ -13,7 +13,8 @@ public enum ERestApiEndpoints {
     POST_AUTHENTICATE("api/user/authenticate"),
     POST_UPDATE_TRANSACTION("api/transaction"),
     GET_FEED_KITTY_ENDPOINT("api/kitty/feed"),
-    GET_BATH_KITTY_ENDPOINT("api/kitty/bath");
+    GET_BATH_KITTY_ENDPOINT("api/kitty/bath"),
+    GET_TRANSACTIONS_BY_USER_ACCOUNT("api/transaction/sender_or_receiver?accountNumber=");
 
     private final String HOST_URL = "http://35.202.69.66:8081/";
 

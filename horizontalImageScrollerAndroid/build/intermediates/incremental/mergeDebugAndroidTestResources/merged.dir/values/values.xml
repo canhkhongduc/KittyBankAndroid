@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="default_frame_color">#FFFFFF</color>
+    <color name="default_frame_off_color">#80FFFFFF</color>
+    <color name="default_transparent_color">#00000000</color>
+    <declare-styleable name="GifTextureView"><attr format="reference|string" name="gifSource"/><attr format="boolean" name="isOpaque"/></declare-styleable>
+    <declare-styleable name="GifView"><attr format="boolean" name="freezesAnimation"/><attr format="integer" name="loopCount"/></declare-styleable>
+    <dimen name="default_image_size">50dp</dimen>
+</resources>
