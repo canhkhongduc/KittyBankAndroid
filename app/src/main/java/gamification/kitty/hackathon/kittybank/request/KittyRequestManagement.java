@@ -39,6 +39,50 @@ public class KittyRequestManagement {
         return applicationContext;
     }
 
+    public void getKittiesByUserId(final IVolleyCallback callback, final int userId){
+        final int[] statusCode = new int[1];
+        final RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        StringRequest stringRequest = new StringRequest(Request.Method.GET,
+                ERestApiEndpoints.GET_KITTIES_BY_USER.toString()+Integer.toString(userId),
+                new Response.Listener<String>(){
+                    @Override
+                    public void onResponse(String response) {
+                        if (statusCode[0] == 200) {
+                            // Pass the response to callback functions to handle after volley has
+                            // finished the request and receive response
+                            callback.onSuccess(response);
+                        }
+                    }
+                },
+                new Response.ErrorListener(){
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Log.e("Error.Response", error.toString());
+                        String json = null;
+                        NetworkResponse response = error.networkResponse;
+                        if(response != null && response.data != null){
+                            switch(response.statusCode){
+                                case 400:
+
+                                    json = new String(response.data);
+                                    System.out.println(json);
+                                    break;
+                            }
+                            //Additional cases
+                        }
+                    }
+                })
+        {
+            @Override
+            protected Response<String> parseNetworkResponse(NetworkResponse response) {
+                statusCode[0] = response.statusCode;
+                return super.parseNetworkResponse(response);
+            }
+        };
+        // Send request to the server
+        requestQueue.add(stringRequest);
+    }
+
     public void getKittyById(final IVolleyCallback callback, final int kittyId){
         final int[] responseCode = new int[1];
 

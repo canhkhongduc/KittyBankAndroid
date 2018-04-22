@@ -12,6 +12,7 @@ public enum ERestApiEndpoints {
     GET_KITTY_BY_ID_ENDPOINT("api/kitty"),
     POST_AUTHENTICATE("api/user/authenticate"),
     POST_UPDATE_TRANSACTION("api/transaction"),
+    GET_KITTIES_BY_USER("api/kitty/search?query=userId:"),
     GET_TRANSACTIONS_BY_USER_ACCOUNT("api/transaction/sender_or_receiver?accountNumber=");
 
 
