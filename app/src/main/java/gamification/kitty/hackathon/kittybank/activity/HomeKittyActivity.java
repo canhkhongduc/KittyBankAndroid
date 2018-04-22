@@ -17,12 +17,15 @@ import java.util.List;
 import gamification.kitty.hackathon.kittybank.adapter.KittyAdapter;
 import gamification.kitty.hackathon.kittybank.callback.IVolleyCallback;
 import gamification.kitty.hackathon.kittybank.entity.Kitty;
+import gamification.kitty.hackathon.kittybank.listener.RecyclerViewClickListener;
 import gamification.kitty.hackathon.kittybank.request.KittyRequestManagement;
 
-public class HomeKittyActivity extends BaseActivity {
+public class HomeKittyActivity extends BaseActivity implements RecyclerViewClickListener {
     private KittyRequestManagement kittyRequestManagement;
     private RecyclerView imageScroller;
     private LinearLayoutManager layoutManager;
+    private List<Kitty> kitties;
+    private HomeKittyActivity activity;
     CardView cvHybrid, cvStore, cvRank;
 
     @Override
@@ -30,10 +33,16 @@ public class HomeKittyActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_kitty);
 
+        activity = this;
+
         imageScroller = findViewById(R.id.pet_slider);
+
+        layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        imageScroller.setLayoutManager(layoutManager);
         cvHybrid = findViewById(R.id.kitty_home_hybridbtn);
-        cvStore = findViewById(R.id.kitty_home_shopbtn);
         cvRank = findViewById(R.id.kitty_home_rankbtn);
+        cvStore = findViewById(R.id.kitty_home_shopbtn);
 
         cvHybrid.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,51 +60,32 @@ public class HomeKittyActivity extends BaseActivity {
             }
         });
 
-
-
-        layoutManager = new LinearLayoutManager(this);
-        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        imageScroller.setLayoutManager(layoutManager);
-
-        List<Kitty> kittyList = new ArrayList<>();
-
-        kittyList.add(new Kitty());
-        kittyList.add(new Kitty());
-        kittyList.add(new Kitty());
-        kittyList.add(new Kitty());
-        kittyList.add(new Kitty());
-
-        KittyAdapter adapter = new KittyAdapter(kittyList);
-
-        imageScroller.setAdapter(adapter);
-
         //test for get kitty request
         kittyRequestManagement = new KittyRequestManagement(getApplicationContext());
         kittyRequestManagement.getKittiesByUserId(new IVolleyCallback() {
             @Override
             public void onSuccess(String result) {
                 Gson gson = new Gson();
-                List<Kitty> kitties = gson.fromJson(result, new TypeToken<List<Kitty>>() {
+                kitties = gson.fromJson(result, new TypeToken<List<Kitty>>() {
                 }.getType());
-                KittyAdapter adapter = new KittyAdapter(kitties);
-                imageScroller.setAdapter(adapter);
 
-//                List<ImageToLoad> images = new ArrayList<>();
-//                for (Kitty kitty : kitties) {
-//                    int drawableResourceId = HomeKittyActivity.this.getResources().getIdentifier(kitty.getImage(), "drawable", HomeKittyActivity.this.getPackageName());
-//                    images.add(new ImageToLoadDrawableResource(drawableResourceId));
-//                }
-//
-//                HorizontalImageScrollerAdapter adapter = new HorizontalImageScrollerAdapter(HomeKittyActivity.this, images);
-//                adapter.setImageSize(550);
-//                imageScroller.setAdapter(adapter);
-//                Log.d("test", result);
+                KittyAdapter adapter = new KittyAdapter(kitties, activity);
+
+                imageScroller.setAdapter(adapter);
             }
 
             @Override
             public void onFailure(String result) {
-                Log.d("test", result);
+                Log.d("test", result + "abc");
             }
         }, 1);
+    }
+
+    @Override
+    public void recyclerViewListClicked(View v, int position) {
+        int itemPosition = imageScroller.getChildLayoutPosition(v);
+        int id = kitties.get(itemPosition).getId();
+        Log.d("test", id + "");
+
     }
 }

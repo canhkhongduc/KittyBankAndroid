@@ -1,7 +1,5 @@
 package gamification.kitty.hackathon.kittybank.entity;
 
-import java.sql.Date;
-
 /**
  * Created by Khổng Cảnh on 4/20/2018.
  */
@@ -21,6 +19,7 @@ public class Kitty {
     private int lastFeeded;
     private int lastShowered;
     private boolean isDeleted;
+    private int hunger;
 
     public Kitty() {
     }
@@ -152,5 +151,13 @@ public class Kitty {
 
     public void setIsDeleted(boolean isDeleted) {
         this.isDeleted = isDeleted;
+    }
+
+    public int getHunger() {
+        return hunger;
+    }
+
+    public void setHunger(int hunger) {
+        this.hunger = hunger;
     }
 }

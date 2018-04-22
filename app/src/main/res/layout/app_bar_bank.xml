@@ -135,7 +135,7 @@
                     android:layout_weight="1"
                     android:text="Lịch sử giao dịch"
                     android:textAlignment="center"
-                    android:textColor="@color/alizarin"
+                    android:textColor="@color/accent"
                     android:textSize="16sp" />
             </LinearLayout>
             <LinearLayout
@@ -157,7 +157,7 @@
                     android:layout_weight="1"
                     android:text="Thú cưng"
                     android:textAlignment="center"
-                    android:textColor="@color/alizarin"
+                    android:textColor="@color/accent"
                     android:textSize="16sp" />
             </LinearLayout>
         </LinearLayout>
