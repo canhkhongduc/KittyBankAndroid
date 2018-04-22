@@ -4,10 +4,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
 
 public class TransactActivity extends BaseActivity {
-    private CardView cvAccount;
-    private CardView cvMoneyTransact;
+    private LinearLayout cvAccount;
+    private LinearLayout cvMoneyTransact;
+    private Button btnBack;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +27,13 @@ public class TransactActivity extends BaseActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(TransactActivity.this, TransactMoneyActivity.class));
+            }
+        });
+        btnBack = findViewById(R.id.btn_back2);
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(TransactActivity.this, BankActivity.class));
             }
         });
     }

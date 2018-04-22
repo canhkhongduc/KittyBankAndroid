@@ -16,7 +16,7 @@ public enum ERestApiEndpoints {
     GET_TRANSACTIONS_BY_USER_ACCOUNT("api/transaction/sender_or_receiver?accountNumber=");
 
 
-    private final String HOST_URL = "http://10.0.2.2:8081/";
+    private final String HOST_URL = "http://35.202.69.66:8081/";
 
     private String fullEndpoint;
 
