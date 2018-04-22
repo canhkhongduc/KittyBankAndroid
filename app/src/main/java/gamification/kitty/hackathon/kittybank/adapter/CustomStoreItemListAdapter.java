@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -69,6 +70,7 @@ public class CustomStoreItemListAdapter extends BaseAdapter {
             holder.description = (TextView) view.findViewById(R.id.tvItemDescription);
             holder.price = (TextView) view.findViewById(R.id.tvPrice);
             holder.btnBuy = (Button) view.findViewById(R.id.btnBuy);
+            holder.image = (ImageView) view.findViewById(R.id.imgAvatar);
             view.setTag(holder);
         } else {
             holder = (ViewHolder) view.getTag();
@@ -79,6 +81,8 @@ public class CustomStoreItemListAdapter extends BaseAdapter {
         holder.name.setText(itemStore.getName());
         holder.description.setText(itemStore.getDescription());
         holder.price.setText("CP: "+itemStore.getPrice());
+        Uri uri = Uri.parse("android.resource://gamification.kitty.hackathon.kittybank/drawable/" + itemStore.getImage() + "_static");
+        holder.image.setImageURI(uri);
         holder.btnBuy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
