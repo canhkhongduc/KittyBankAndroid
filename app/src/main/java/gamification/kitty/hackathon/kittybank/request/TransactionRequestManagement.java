@@ -19,6 +19,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import gamification.kitty.hackathon.kittybank.callback.IVolleyCallback;
 import gamification.kitty.hackathon.kittybank.entity.Transaction;
@@ -47,6 +48,8 @@ public class TransactionRequestManagement {
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         JSONObject json = new JSONObject();
         try {
+            Random randomm = new Random();
+            json.put("id", randomm.nextInt());
             json.put("senderAccount", transaction.getSenderAccount());
             json.put("receiverAccount", transaction.getReceiverAccount());
             json.put("receiverName", transaction.getReceiverName());
