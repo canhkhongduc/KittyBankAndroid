@@ -18,16 +18,14 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            </intent-filter></activity>
         <activity android:name=".BankActivity" />
         <activity android:name=".TransactActivity" />
         <activity android:name=".AccountDetailActivity" />
         <activity android:name=".TransactMoneyActivity"></activity>
         <activity android:name=".StoreActivity" />
         <activity android:name=".HistoryActivity" />
-        <activity android:name=".HomeKittyActivity" >
-
+        <activity android:name=".HomeKittyActivity">
         </activity>
         <activity android:name=".ProfileActivity" />
     </application>

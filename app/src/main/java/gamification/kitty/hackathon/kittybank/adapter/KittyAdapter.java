@@ -11,11 +11,13 @@ import java.util.List;
 
 import gamification.kitty.hackathon.kittybank.activity.R;
 import gamification.kitty.hackathon.kittybank.entity.Kitty;
+import gamification.kitty.hackathon.kittybank.listener.RecyclerViewClickListener;
 
 public class KittyAdapter extends RecyclerView.Adapter<KittyAdapter.ViewHolder> {
     private static List<Kitty> kittyList;
+    private static RecyclerViewClickListener itemListener;
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public ImageView imgKitty;
         public ImageView imgHunger;
 
@@ -24,11 +26,19 @@ public class KittyAdapter extends RecyclerView.Adapter<KittyAdapter.ViewHolder> 
 
             imgKitty = itemView.findViewById(R.id.kitty_home_img_pet);
             imgHunger = itemView.findViewById(R.id.kitty_home_hunger);
+
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            itemListener.recyclerViewListClicked(v, this.getPosition());
         }
     }
 
-    public KittyAdapter(List<Kitty> kittyList) {
+    public KittyAdapter(List<Kitty> kittyList, RecyclerViewClickListener itemListener) {
         this.kittyList = kittyList;
+        this.itemListener = itemListener;
     }
 
     @Override
@@ -41,16 +51,14 @@ public class KittyAdapter extends RecyclerView.Adapter<KittyAdapter.ViewHolder> 
 
     @Override
     public void onBindViewHolder(KittyAdapter.ViewHolder holder, int position) {
-        Uri uri = Uri.parse("android.resource://gamification.kitty.hackathon.kittybank/drawable/dragon1");
+        Uri uri = Uri.parse("android.resource://gamification.kitty.hackathon.kittybank/drawable/" + kittyList.get(position).getImage() + "-static");
         Uri uri2 = Uri.parse("android.resource://gamification.kitty.hackathon.kittybank/drawable/meat");
 
-//        holder.txtUser.setText(String.valueOf(kittyList.get(position).getUserId()));
-//        holder.txtPet.setText(kittyList.get(position).getName());
-//        holder.txtRank.setText(String.valueOf(kittyList.get(position).getRank()));
-//        holder.txtLevel.setText(String.valueOf(kittyList.get(position).getLevel()));
-//        holder.txtExp.setText(String.valueOf(kittyList.get(position).getExperience()));
         holder.imgKitty.setImageURI(uri);
-        holder.imgHunger.setImageURI(uri2);
+
+        if (kittyList.get(position).getHunger() <= 15) {
+            holder.imgHunger.setImageURI(uri2);
+        }
     }
 
     @Override
