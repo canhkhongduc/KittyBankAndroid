@@ -1,6 +1,8 @@
 package gamification.kitty.hackathon.kittybank.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -24,6 +26,7 @@ public class HomeKittyActivity extends BaseActivity implements RecyclerViewClick
     private LinearLayoutManager layoutManager;
     private List<Kitty> kitties;
     private HomeKittyActivity activity;
+    CardView cvHybrid, cvStore, cvRank;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +40,25 @@ public class HomeKittyActivity extends BaseActivity implements RecyclerViewClick
         layoutManager = new LinearLayoutManager(this);
         layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         imageScroller.setLayoutManager(layoutManager);
+        cvHybrid = findViewById(R.id.kitty_home_hybridbtn);
+        cvRank = findViewById(R.id.kitty_home_rankbtn);
+        cvStore = findViewById(R.id.kitty_home_shopbtn);
+
+        cvHybrid.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeKittyActivity.this, HybridActivity.class);
+                HomeKittyActivity.this.startActivity(intent);
+            }
+        });
+
+        cvStore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(HomeKittyActivity.this, StoreActivity.class);
+                HomeKittyActivity.this.startActivity(intent);
+            }
+        });
 
         //test for get kitty request
         kittyRequestManagement = new KittyRequestManagement(getApplicationContext());

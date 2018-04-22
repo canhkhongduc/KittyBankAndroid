@@ -3,6 +3,7 @@ package gamification.kitty.hackathon.kittybank.adapter;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Build;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
+import gamification.kitty.hackathon.kittybank.activity.HomeKittyActivity;
 import gamification.kitty.hackathon.kittybank.activity.R;
 import gamification.kitty.hackathon.kittybank.callback.IVolleyCallback;
 import gamification.kitty.hackathon.kittybank.entity.ItemStore;
@@ -80,7 +82,6 @@ public class CustomStoreItemListAdapter extends BaseAdapter {
         holder.btnBuy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(context, Integer.toString(itemStore.getId()), Toast.LENGTH_SHORT).show();
                 AlertDialog.Builder builder;
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     builder = new AlertDialog.Builder(context, android.R.style.Theme_Material_Dialog_Alert);
@@ -96,6 +97,8 @@ public class CustomStoreItemListAdapter extends BaseAdapter {
                                     @Override
                                     public void onSuccess(String result) {
                                         Toast.makeText(context, "Buy item successfully!", Toast.LENGTH_SHORT).show();
+                                        Intent intent = new Intent(context, HomeKittyActivity.class);
+                                        context.startActivity(intent);
                                     }
 
                                     @Override
