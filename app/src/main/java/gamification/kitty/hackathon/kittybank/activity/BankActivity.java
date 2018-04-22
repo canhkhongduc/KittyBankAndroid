@@ -9,6 +9,7 @@ import android.support.v7.widget.CardView;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import gamification.kitty.hackathon.kittybank.entity.User;
@@ -18,36 +19,51 @@ public class BankActivity extends BaseActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     private TextView tvUserFullname;
     private TextView tvAccountNumber;
-    private CardView cvTransact;
-    private CardView cvHistory;
+    private LinearLayout llTransact;
+    private LinearLayout llHistory;
+    private LinearLayout llKitty;
+    private TextView dlUserFullName;
+    private TextView dlUserAccount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bank);
 
 
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
+        View parentView = navigationView.getHeaderView(0);
+        dlUserFullName = parentView.findViewById(R.id.dlUserFullName);
+        dlUserAccount = parentView.findViewById(R.id.dlUserAccount);
         tvAccountNumber = findViewById(R.id.tvUserCIF);
         tvUserFullname = findViewById(R.id.tvUsername);
         User user = Utils.getUserFromSharedPreference(this);
+        dlUserFullName.setText(user.getFullName());
+        dlUserAccount.setText(user.getAccountNumber());
         tvUserFullname.setText(user.getFullName());
         tvAccountNumber.setText("CIF: " + user.getAccountNumber());
-        cvTransact = findViewById(R.id.cvTransact);
-        cvTransact.setOnClickListener(new View.OnClickListener() {
+        llTransact = findViewById(R.id.llTransact);
+        llTransact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(BankActivity.this, TransactActivity.class));
             }
         });
-        cvHistory = findViewById(R.id.cvHistory);
-        cvHistory.setOnClickListener(new View.OnClickListener() {
+        llHistory = findViewById(R.id.llHistory);
+        llHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(BankActivity.this, HistoryActivity.class));
+            }
+        });
+        llKitty = findViewById(R.id.llKitty);
+        llKitty.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(BankActivity.this, HomeKittyActivity.class));
             }
         });
     }
@@ -90,18 +106,14 @@ public class BankActivity extends BaseActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_transact) {
+            startActivity(new Intent(BankActivity.this, TransactActivity.class));
+        } else if (id == R.id.nav_saving) {
 
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.nav_history) {
+            startActivity(new Intent(BankActivity.this, HistoryActivity.class));
+        } else if (id == R.id.nav_pet) {
+            startActivity(new Intent(BankActivity.this, HomeKittyActivity.class));
         } else if (id == R.id.nav_logout){
             Utils.destroySharedpreference(getApplicationContext());
             startActivity(new Intent(BankActivity.this, LoginActivity.class));

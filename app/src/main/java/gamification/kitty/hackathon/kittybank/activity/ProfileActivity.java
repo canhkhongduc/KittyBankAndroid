@@ -135,16 +135,6 @@ public class ProfileActivity extends BaseActivity {
         foodList.setLayoutManager(layoutManager);
 
         foodList.setAdapter(foodAdapter);
-
-        btnFeed = findViewById(R.id.profile_btn_feed);
-        btnFeed.setOnClickListener(new onBtnFeedClickListener());
-    }
-
-    private class onBtnFeedClickListener implements View.OnClickListener {
-        @Override
-        public void onClick(View v) {
-            foodList.setVisibility(View.VISIBLE);
-        }
     }
 
     public void hideFoodList() {

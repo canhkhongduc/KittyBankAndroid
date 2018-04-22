@@ -7,10 +7,6 @@
     android:orientation="vertical"
     tools:context="gamification.kitty.hackathon.kittybank.activity.AccountDetailActivity">
 
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="250dp">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -18,40 +14,21 @@
             android:orientation="horizontal"
             android:weightSum="2">
 
-            <android.support.v7.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1">
-
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:weightSum="10">
 
-                    <android.support.v7.widget.CardView
+
+                    <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="20dp"
-                        android:layout_weight="8"
-                        app:cardBackgroundColor="@color/emerald">
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:text="Tài khoản thanh toán"
-                            android:textAlignment="center"
-                            android:textColor="@color/accent"
-                            android:textSize="20sp"
-                            android:textStyle="bold" />
-
-                    </android.support.v7.widget.CardView>
-
-                    <android.support.v7.widget.CardView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="2"
-                        app:cardBackgroundColor="@color/emerald">
+                        android:layout_height="50dp"
+                        android:text="Tài khoản thanh toán"
+                        android:textAlignment="center"
+                        android:textColor="@color/alizarin"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -74,7 +51,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="Số tài khoản"
-                                    android:textColor="@color/accent"
+                                    android:textColor="@color/alizarin"
                                     android:textSize="20sp" />
 
                                 <TextView
@@ -84,7 +61,7 @@
                                     android:layout_weight="1"
                                     android:text="0989284470"
                                     android:textAlignment="textEnd"
-                                    android:textColor="@color/accent"
+                                    android:textColor="@color/alizarin"
                                     android:textSize="20sp" />
 
                             </LinearLayout>
@@ -105,7 +82,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="Tên tài khoản"
-                                    android:textColor="@color/accent"
+                                    android:textColor="@color/alizarin"
                                     android:textSize="20sp" />
 
                                 <TextView
@@ -115,7 +92,7 @@
                                     android:layout_weight="1"
                                     android:text="Khong Duc Canh"
                                     android:textAlignment="textEnd"
-                                    android:textColor="@color/accent"
+                                    android:textColor="@color/alizarin"
                                     android:textSize="20sp" />
 
                             </LinearLayout>
@@ -136,7 +113,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="Số dư"
-                                    android:textColor="@color/accent"
+                                    android:textColor="@color/alizarin"
                                     android:textSize="20sp" />
 
                                 <TextView
@@ -146,7 +123,7 @@
                                     android:layout_weight="1"
                                     android:text="500,000 VND"
                                     android:textAlignment="textEnd"
-                                    android:textColor="@color/accent"
+                                    android:textColor="@color/alizarin"
                                     android:textSize="20sp" />
 
                             </LinearLayout>
@@ -167,7 +144,7 @@
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
                                     android:text="Số dư khả dụng"
-                                    android:textColor="@color/accent"
+                                    android:textColor="@color/alizarin"
                                     android:textSize="20sp" />
 
                                 <TextView
@@ -177,7 +154,7 @@
                                     android:layout_weight="1"
                                     android:text="500,000 VND"
                                     android:textAlignment="textEnd"
-                                    android:textColor="@color/accent"
+                                    android:textColor="@color/alizarin"
                                     android:textSize="20sp" />
 
                             </LinearLayout>
@@ -188,15 +165,9 @@
                                 android:background="#FFF" />
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
-
-
                 </LinearLayout>
-            </android.support.v7.widget.CardView>
 
         </LinearLayout>
-    </android.support.v7.widget.CardView>
-
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/btnBack"
         android:layout_width="300dp"

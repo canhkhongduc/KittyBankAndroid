@@ -17,8 +17,12 @@
     <color name="white">#FFFFFF</color>
     <color name="light_blue">#66ccff</color>
     <color name="light_pink">#ff80b3</color>
-    <color name="emerald">#27ae60</color>
-    <color name="peterRiver">#2980b9</color>
-    <color name="carrot">#d35400</color>
-    <color name="alizarin">#c0392b</color>
+    <color name="emerald">#26a65b</color>
+    <color name="peterRiver">#219150</color>
+    <color name="carrot">#1c7d44</color>
+    <color name="alizarin">#0ba32c</color>
+    <color name="kitty_color">#e2252b</color>
+    <color name="history_color">#ffda44</color>
+    <color name="saving_color">#219580</color>
+    <color name="pet_color">#f26d74</color>
 </resources>

@@ -56,7 +56,7 @@ public class HistoryActivity extends AppCompatActivity {
      btnBack.setOnClickListener(new View.OnClickListener() {
          @Override
          public void onClick(View v) {
-            startActivity(new Intent(HistoryActivity.this, TransactActivity.class));
+            startActivity(new Intent(HistoryActivity.this, BankActivity.class));
          }
      });
     }
